@@ -22,8 +22,6 @@
     </UserDefinedCommands>
     <PluginCommands />
     <ScintillaKeys>
-        <ScintKey ScintID="2177" menuCmdID="42001" Ctrl="no" Alt="no" Shift="yes" Key="46" />
-        <ScintKey ScintID="2178" menuCmdID="42002" Ctrl="yes" Alt="no" Shift="no" Key="45" />
         <ScintKey ScintID="2338" menuCmdID="0" Ctrl="yes" Alt="no" Shift="yes" Key="75" />
     </ScintillaKeys>
 </NotepadPlus>
