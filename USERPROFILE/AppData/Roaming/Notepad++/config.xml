@@ -1,35 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <NotepadPlus>
     <FindHistory nbMaxFindHistoryPath="10" nbMaxFindHistoryFilter="10" nbMaxFindHistoryFind="10" nbMaxFindHistoryReplace="10" matchWord="no" matchCase="no" wrap="yes" directionDown="yes" fifRecuisive="yes" fifInHiddenFolder="no" fifProjectPanel1="no" fifProjectPanel2="no" fifProjectPanel3="no" fifFilterFollowsDoc="no" fifFolderFollowsDoc="no" searchMode="0" transparencyMode="1" transparency="150" dotMatchesNewline="no" isSearch2ButtonsMode="yes" regexBackward4PowerUser="no" bookmarkLine="no" purge="no">
-        <Filter name="" />
-        <Find name="summer" />
-        <Find name="37" />
-        <Find name="linkedin" />
-        <Find name="successfac" />
-        <Find name="sggov" />
-        <Find name="halp" />
-        <Find name="hal" />
-        <Find name="titan" />
-        <Find name="emea" />
-        <Find name="street" />
-        <Replace name=" " />
-        <Replace name="/" />
-        <Replace name="Part " />
-        <Replace name="==================================================\n" />
-        <Replace name="==================================================" />
-        <Replace name="::" />
     </FindHistory>
     <History nbMaxFile="10" inSubMenu="no" customLength="-1">
-        <File filename="C:\Users\Stefan Lee\Documents\Development\Glassdoor Review Helper.user.js" />
-        <File filename="C:\Users\Stefan Lee\Desktop\itm-sg interview.txt" />
-        <File filename="C:\Users\Stefan Lee\Documents\Development\node.js" />
-        <File filename="C:\Users\Stefan Lee\_NUS\zz_of_Archive\Job Hunt\Elliot\reply.docx" />
-        <File filename="C:\Users\Stefan Lee\Desktop\csit response id.txt" />
-        <File filename="C:\Users\Stefan Lee\Desktop\offer letter.txt" />
-        <File filename="C:\Users\Stefan Lee\_NUS\zz_of_Archive\Job Hunt\job hunt quick fill in.txt" />
-        <File filename="C:\Users\Stefan Lee\AppData\Roaming\fman\Plugins\User\Settings\Sort Settings (Windows).json" />
-        <File filename="C:\Users\Stefan Lee\Documents\Development\LearnSpringBoot\notes.txt" />
-        <File filename="C:\Users\Stefan Lee\AppData\Roaming\fman\Plugins\User\Settings\Visited Paths (Windows).json" />
     </History>
     <ProjectPanels>
         <ProjectPanel id="0" workSpaceFile="" />
@@ -47,7 +20,7 @@
         <GUIConfig name="ScintillaViewsSplitter">vertical</GUIConfig>
         <GUIConfig name="UserDefineDlg" position="undocked">hide</GUIConfig>
         <GUIConfig name="TabSetting" replaceBySpace="yes" size="4" backspaceUnindent="no" />
-        <GUIConfig name="AppPosition" x="95" y="56" width="1444" height="924" isMaximized="no" />
+        <GUIConfig name="AppPosition" x="95" y="56" width="1444" height="924" isMaximized="yes" />
         <GUIConfig name="FindWindowPosition" left="350" top="491" right="1087" bottom="933" isLessModeOn="no" />
         <GUIConfig name="FinderConfig" wrappedLines="no" purgeBeforeEverySearch="no" showOnlyOneEntryPerFoundLine="yes" />
         <GUIConfig name="noUpdate" intervalDays="15" nextUpdateDate="20231219" autoUpdateMode="0">yes</GUIConfig>
@@ -68,7 +41,7 @@
         <GUIConfig name="MRU">yes</GUIConfig>
         <GUIConfig name="URL">2</GUIConfig>
         <GUIConfig name="uriCustomizedSchemes">svn:// cvs:// git:// imap:// irc:// irc6:// ircs:// ldap:// ldaps:// news: telnet:// gopher:// ssh:// sftp:// smb:// skype: snmp:// spotify: steam:// sms: slack:// chrome:// bitcoin:</GUIConfig>
-        <GUIConfig name="globalOverride" fg="no" bg="no" font="yes" fontSize="yes" bold="no" italic="no" underline="no" />
+        <GUIConfig name="globalOverride" fg="no" bg="no" font="no" fontSize="no" bold="no" italic="no" underline="no" />
         <GUIConfig name="auto-completion" autoCAction="3" triggerFromNbChar="1" autoCIgnoreNumbers="yes" insertSelectedItemUseENTER="yes" insertSelectedItemUseTAB="yes" autoCBrief="no" funcParams="yes" />
         <GUIConfig name="auto-insert" parentheses="yes" brackets="yes" curlyBrackets="yes" quotes="yes" doubleQuotes="yes" htmlXmlTag="yes" />
         <GUIConfig name="sessionExt"></GUIConfig>
@@ -90,11 +63,6 @@
         <GUIConfig name="DarkMode" enable="no" colorTone="3" customColorTop="2105376" customColorMenuHotTrack="4210752" customColorActive="4210752" customColorMain="2105376" customColorError="176" customColorText="14737632" customColorDarkText="12632256" customColorDisabledText="8421504" customColorLinkText="65535" customColorEdge="6579300" customColorHotEdge="10197915" customColorDisabledEdge="4737096" enableWindowsMode="no" darkThemeName="DarkModeDefault.xml" darkToolBarIconSet="0" darkTbFluentColor="0" darkTbFluentCustomColor="0" darkTbFluentMono="no" darkTabIconSet="2" darkTabUseTheme="no" lightThemeName="" lightToolBarIconSet="0" lightTbFluentColor="0" lightTbFluentCustomColor="1914702" lightTbFluentMono="no" lightTabIconSet="0" lightTabUseTheme="yes" />
         <GUIConfig name="ScintillaPrimaryView" lineNumberMargin="show" lineNumberDynamicWidth="no" bookMarkMargin="show" indentGuideLine="show" folderMarkStyle="box" isChangeHistoryEnabled="0" lineWrapMethod="aligned" currentLineIndicator="1" currentLineFrameWidth="1" virtualSpace="no" scrollBeyondLastLine="yes" rightClickKeepsSelection="no" selectedTextForegroundSingleColor="no" disableAdvancedScrolling="no" wrapSymbolShow="hide" Wrap="yes" borderEdge="yes" isEdgeBgMode="no" edgeMultiColumnPos="" zoom="0" zoom2="0" whiteSpaceShow="hide" eolShow="hide" eolMode="1" npcShow="hide" npcMode="1" npcCustomColor="no" npcIncludeCcUniEOL="no" npcNoInputC0="no" ccShow="no" borderWidth="2" smoothFont="yes" paddingLeft="0" paddingRight="0" distractionFreeDivPart="4" lineCopyCutWithoutSelection="yes" multiSelection="yes" columnSel2MultiEdit="yes" />
         <GUIConfig name="DockingManager" leftWidth="510" rightWidth="200" topHeight="200" bottomHeight="200">
-            <PluginDlg pluginName="Notepad++::InternalFunction" id="0" curr="3" prev="-1" isVisible="no" />
-            <PluginDlg pluginName="Notepad++::InternalFunction" id="42051" curr="1" prev="-1" isVisible="no" />
-            <PluginDlg pluginName="GitSCM.dll" id="4" curr="0" prev="-1" isVisible="no" />
-            <PluginDlg pluginName="Tags" id="-1" curr="0" prev="-1" isVisible="no" />
-            <PluginDlg pluginName="Notepad++::InternalFunction" id="44080" curr="1" prev="-1" isVisible="no" />
             <ActiveTabs cont="0" activeTab="-1" />
             <ActiveTabs cont="1" activeTab="-1" />
             <ActiveTabs cont="2" activeTab="-1" />
