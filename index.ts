@@ -12,7 +12,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // C:\Users\Stefan Lee
 const USERPROFILE = os.homedir();
 
-const VscodeConfig: Config[] = [
+const vscodeConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
@@ -48,8 +48,10 @@ const VscodeConfig: Config[] = [
   },
 ];
 
+
+
 async function copyFromLocalMachineToRepo() {
-  for (const config of VscodeConfig) {
+  for (const config of vscodeConfig) {
     const source = path.join(USERPROFILE, ...config.pathComponents);
     const target = path.join(__dirname, ...config.pathComponents);
     debugLog(`Copying from '${source}' to '${target}'`);
