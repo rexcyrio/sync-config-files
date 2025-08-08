@@ -48,8 +48,6 @@ const vscodeConfig: Config[] = [
   },
 ];
 
-
-
 async function copyFromLocalMachineToRepo() {
   for (const config of vscodeConfig) {
     const source = path.join(USERPROFILE, ...config.pathComponents);
