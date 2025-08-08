@@ -1,8 +1,9 @@
+import { program } from "commander";
 import fs from "node:fs";
 import os from "node:os";
 import path, { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { Resource, type Config } from "./types.js";
+import { CopyDirection, Resource, type Config } from "./types.js";
 
 const DEBUG = true;
 
@@ -48,11 +49,153 @@ const vscodeConfig: Config[] = [
   },
 ];
 
-async function copyFromLocalMachineToRepo() {
-  for (const config of vscodeConfig) {
-    const source = path.join(USERPROFILE, ...config.pathComponents);
-    const target = path.join(__dirname, ...config.pathComponents);
-    debugLog(`Copying from '${source}' to '${target}'`);
+// might need to change this as needed
+const intelliJIdentifier = "IdeaIC2025.2";
+
+const intelliJConfig: Config[] = [
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "AppData",
+      "Roaming",
+      "JetBrains",
+      intelliJIdentifier,
+      "codestyles",
+      "Default.xml",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "AppData",
+      "Roaming",
+      "JetBrains",
+      intelliJIdentifier,
+      "keymaps",
+      "VSCode copy.xml",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "AppData",
+      "Roaming",
+      "JetBrains",
+      intelliJIdentifier,
+      "options",
+      "editor-font.xml",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "AppData",
+      "Roaming",
+      "JetBrains",
+      intelliJIdentifier,
+      "options",
+      "editor.xml",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "AppData",
+      "Roaming",
+      "JetBrains",
+      intelliJIdentifier,
+      "options",
+      "ide.general.xml",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "AppData",
+      "Roaming",
+      "JetBrains",
+      intelliJIdentifier,
+      "options",
+      "terminal-font.xml",
+    ],
+  },
+];
+
+const notepadPlusPlusConfig: Config[] = [
+  {
+    type: Resource.folder,
+    pathComponents: [
+      // <USERPROFILE>
+      "AppData",
+      "Roaming",
+      "Notepad++",
+      "plugins",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "AppData",
+      "Roaming",
+      "Notepad++",
+      "config.xml",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "AppData",
+      "Roaming",
+      "Notepad++",
+      "shortcuts.xml",
+    ],
+  },
+];
+
+async function doCopy(copyDirection: CopyDirection) {
+  const allConfigs = [
+    ...vscodeConfig,
+    ...intelliJConfig,
+    ...notepadPlusPlusConfig,
+  ];
+
+  for (const config of allConfigs) {
+    let source: string;
+    let target: string;
+
+    switch (copyDirection) {
+      case CopyDirection.fromLocalMachineToRepo:
+        source = path.join(USERPROFILE, ...config.pathComponents);
+        target = path.join(__dirname, ...config.pathComponents);
+        break;
+
+      case CopyDirection.fromRepoToLocalMachine:
+        source = path.join(__dirname, ...config.pathComponents);
+        target = path.join(USERPROFILE, ...config.pathComponents);
+        break;
+
+      default:
+        throw new Error();
+    }
+
+    // mkdir -p
+    await fs.promises.mkdir(path.dirname(target), { recursive: true });
+
+    debugLog(
+      `
+Copying
+  From : '${source}'
+  To   : '${target}'
+`.trim()
+    );
 
     switch (config.type) {
       case Resource.file:
@@ -73,14 +216,52 @@ async function copyFromLocalMachineToRepo() {
 
 // console.log() uses any[]
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function debugLog(...s: any[]) {
+function debugLog(...message: any[]) {
   if (DEBUG) {
-    console.log(...s);
+    console.log(...message);
   }
 }
 
 function main() {
-  copyFromLocalMachineToRepo();
+  const toRepo = {
+    cliFlag: "--to-repo",
+    name: "toRepo",
+  };
+  const fromRepo = {
+    cliFlag: "--from-repo",
+    name: "fromRepo",
+  };
+
+  program.option(toRepo.cliFlag).option(fromRepo.cliFlag).parse();
+
+  const options = program.opts();
+  const isToRepoFlagPresent = Object.hasOwn(options, toRepo.name);
+  const isFromRepoFlagPresent = Object.hasOwn(options, fromRepo.name);
+
+  if (!isToRepoFlagPresent && !isFromRepoFlagPresent) {
+    console.error(
+      `Please specify at least one of the following: '${toRepo.cliFlag}', '${fromRepo.cliFlag}'`
+    );
+
+    return;
+  }
+
+  if (isToRepoFlagPresent && isFromRepoFlagPresent) {
+    console.error(
+      `Please specify only one of the following: '${toRepo.cliFlag}', '${fromRepo.cliFlag}'`
+    );
+
+    return;
+  }
+
+  if (isToRepoFlagPresent) {
+    doCopy(CopyDirection.fromLocalMachineToRepo);
+  } else if (isFromRepoFlagPresent) {
+    doCopy(CopyDirection.fromRepoToLocalMachine);
+  } else {
+    // should never reach here
+    throw new Error();
+  }
 }
 
 main();
