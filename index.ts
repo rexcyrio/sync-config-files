@@ -10,6 +10,9 @@ const DEBUG = true;
 // C:\Users\Stefan Lee\Documents\Development\sync-config-files
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+// C:\Users\Stefan Lee\Documents\Development\sync-config-files\USERPROFILE
+const REPO_USERPROFILE = path.join(__dirname, "USERPROFILE");
+
 // C:\Users\Stefan Lee
 const USERPROFILE = os.homedir();
 
@@ -174,11 +177,11 @@ async function doCopy(copyDirection: CopyDirection) {
     switch (copyDirection) {
       case CopyDirection.fromLocalMachineToRepo:
         source = path.join(USERPROFILE, ...config.pathComponents);
-        target = path.join(__dirname, ...config.pathComponents);
+        target = path.join(REPO_USERPROFILE, ...config.pathComponents);
         break;
 
       case CopyDirection.fromRepoToLocalMachine:
-        source = path.join(__dirname, ...config.pathComponents);
+        source = path.join(REPO_USERPROFILE, ...config.pathComponents);
         target = path.join(USERPROFILE, ...config.pathComponents);
         break;
 
