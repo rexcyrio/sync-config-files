@@ -1,0 +1,18 @@
+[user]
+    name = rexcyrio
+    email = stefancyrio@gmail.com
+[core]
+    autocrlf = false
+    safecrlf = false
+    ignoreCase = false
+[alias]
+    history = log --pretty=format:\"%C(auto)%h %ad | %s%d [%an]%C(reset)\" --graph --date=short 
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[credential]
+    helper = manager
+[credential "helperselector"]
+    selected = manager

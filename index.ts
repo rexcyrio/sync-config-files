@@ -163,11 +163,64 @@ const notepadPlusPlusConfig: Config[] = [
   },
 ];
 
+const homeConfig: Config[] = [
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "scoop.ps1",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      ".gitconfig",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "vimfiles",
+      "vimrc",
+    ],
+  },
+];
+
+const scoopConfig: Config[] = [
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "scoop",
+      "persist",
+      "altsnap",
+      "AltSnap.ini",
+    ],
+  },
+];
+
+const powerShellProfileConfig: Config[] = [
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "Documents",
+      "WindowsPowerShell",
+      "Microsoft.PowerShell_profile.ps1",
+    ],
+  },
+];
+
 async function doCopy(copyDirection: CopyDirection) {
   const allConfigs = [
     ...vscodeConfig,
     ...intelliJConfig,
     ...notepadPlusPlusConfig,
+    ...homeConfig,
+    ...scoopConfig,
+    ...powerShellProfileConfig,
   ];
 
   for (const config of allConfigs) {
