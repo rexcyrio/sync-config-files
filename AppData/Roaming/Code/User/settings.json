@@ -1,0 +1,156 @@
+{
+    "files.autoSave": "afterDelay",
+    "editor.formatOnSave": true,
+    // "editor.formatOnSave": false,
+    "editor.insertSpaces": true,
+    "editor.fontSize": 18,
+    "editor.renderLineHighlight": "all",
+    "editor.renderWhitespace": "none",
+    "editor.unicodeHighlight.nonBasicASCII": true,
+    "editor.guides.bracketPairs": true,
+    "editor.linkedEditing": true,
+    "editor.stickyScroll.enabled": false,
+    "editor.rulers": [
+        80,
+        100,
+        120
+    ],
+    "diffEditor.ignoreTrimWhitespace": true,
+    "workbench.startupEditor": "none",
+    "workbench.editor.restoreViewState": false,
+    "workbench.localHistory.maxFileEntries": 500,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorCustomizations": {
+        "editorWhitespace.foreground": "#999999",
+        "[Default Dark+]": {
+            "editor.lineHighlightBackground": "#37373D"
+        }
+    },
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
+    "terminal.integrated.fontFamily": "Roboto Mono",
+    "material-icon-theme.saturation": 0.8,
+    "material-icon-theme.opacity": 0.8,
+    "material-icon-theme.activeIconPack": "react_redux",
+    "prettier.tabWidth": 2,
+    "editor.tabSize": 2,
+    "cSpell.language": "en-GB,lorem",
+    "cSpell.maxNumberOfProblems": 500,
+    "cSpell.enabledFileTypes": {
+        "xaml": true,
+        "coq": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+    },
+    "[matlab]": {
+        "editor.defaultFormatter": "AffenWiesel.matlab-formatter"
+    },
+    "[sql]": {
+        "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+    },
+    "[csharp]": {
+        "editor.defaultFormatter": "csharpier.csharpier-vscode"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "csharpier.csharpier-vscode"
+    },
+    "latex-workshop.formatting.latex": "latexindent",
+    "files.exclude": {
+        "**/.git": false,
+    },
+    "files.readonlyInclude": {
+        "**/node_modules/**": true
+    },
+    "todohighlight.exclude": [
+        "**/node_modules/**",
+        "**/dist/**",
+        "**/build/**",
+        "**/.vscode/**",
+        "**/.github/**",
+    ],
+    "pdf-preview.default.scale": "page-width",
+    "notebook.markup.fontSize": 14,
+    "notebook.lineNumbers": "on",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescript.referencesCodeLens.enabled": true,
+    "git.inputValidation": true,
+    "gitlens.plusFeatures.enabled": false,
+    "gitlens.defaultDateLocale": "system",
+    "gitlens.graph.minimap.enabled": false,
+    "gitlens.graph.layout": "editor",
+    "java.inlayHints.parameterNames.enabled": "none",
+    "java.autobuild.enabled": false,
+    "emmet.showExpandedAbbreviation": "never",
+    "python.REPL.enableREPLSmartSend": false,
+    "python.analysis.typeCheckingMode": "standard",
+    "Prettier-SQL.keywordCase": "upper",
+    "sqltools.autoOpenSessionFiles": false,
+    "terminal.integrated.commandsToSkipShell": [
+        "-matlab.interrupt",
+    ],
+    "MATLAB.matlabConnectionTiming": "never",
+    "MATLAB.telemetry": false,
+    "redhat.telemetry.enabled": false,
+    "gitlens.telemetry.enabled": false,
+    "telemetry.feedback.enabled": false,
+    "dotnetAcquisitionExtension.enableTelemetry": false,
+    "docker.lsp.telemetry": "off",
+    "remote.SSH.remotePlatform": {
+        "soctf-pdc-001.d1.comp.nus.edu.sg": "linux",
+        "soctf-pdc-002.d1.comp.nus.edu.sg": "linux",
+        "soctf-pdc-003.d1.comp.nus.edu.sg": "linux",
+        "soctf-pdc-009.d1.comp.nus.edu.sg": "linux",
+        "soctf-pdc-010.d1.comp.nus.edu.sg": "linux",
+        "soctf-pdc-018.d1.comp.nus.edu.sg": "linux",
+        "soctf-pdc-019.d1.comp.nus.edu.sg": "linux",
+        "soctf-pdc-020.d1.comp.nus.edu.sg": "linux",
+        "soctf-pdc-021.d1.comp.nus.edu.sg": "linux",
+        "soctf-pdc-025.d1.comp.nus.edu.sg": "linux",
+        "soctf-pdc-026.d1.comp.nus.edu.sg": "linux",
+        "soctf-pdc-027.d1.comp.nus.edu.sg": "linux",
+        "soctf-pdc-028.d1.comp.nus.edu.sg": "linux",
+        "soctf-pdc-029.d1.comp.nus.edu.sg": "linux",
+        "soctf-pdc-030.d1.comp.nus.edu.sg": "linux",
+        "soctf-pdc-033.d1.comp.nus.edu.sg": "linux",
+        "xlogin0.comp.nus.edu.sg": "linux"
+    },
+    "coqtop.binPath": "/usr/bin",
+    "remote.autoForwardPortsSource": "hybrid",
+    // https://www.comp.nus.edu.sg/~cs3210/student-guide/soc-gpus/
+    "remote.SSH.useLocalServer": false,
+    "remote.SSH.useExecServer": false,
+    "remote.SSH.enableDynamicForwarding": false,
+    "remote.SSH.showLoginTerminal": false,
+    "remote.SSH.enableRemoteCommand": false,
+    // https://www.comp.nus.edu.sg/~cs3210/student-guide/soc-gpus/
+}

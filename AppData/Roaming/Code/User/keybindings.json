@@ -1,0 +1,60 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+shift+8",
+        "command": "editor.action.toggleRenderWhitespace"
+    },
+    {
+        "key": "ctrl+k ctrl+,",
+        "command": "workbench.action.openSettingsJson"
+    },
+    {
+        "key": "shift+alt+;",
+        "command": "extension.insertSemicolonWithNewLine",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+;",
+        "command": "extension.insertSemicolon",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+/",
+        "command": "-extension.insertSemicolon",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+/",
+        "command": "-extension.insertSemicolonWithNewLine",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "f4",
+        "command": "gitlens.openWorkingFile"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-matlab.interrupt",
+        "when": "editorTextFocus && !editorHasSelection && editorLangId == 'matlab' || matlab.isActiveTerminal && terminalFocus && !matlab.terminalHasSelection && !terminalTextSelectedInFocused"
+    },
+    {
+        "key": "alt+down",
+        "command": "-extension.coq.stepForward",
+        "when": "resourceScheme == 'coq-view'"
+    },
+    {
+        "key": "alt+down",
+        "command": "-extension.coq.stepForward",
+        "when": "editorTextFocus && editorLangId == 'coq'"
+    },
+    {
+        "key": "alt+up",
+        "command": "-extension.coq.stepBackward",
+        "when": "resourceScheme == 'coq-view'"
+    },
+    {
+        "key": "alt+up",
+        "command": "-extension.coq.stepBackward",
+        "when": "editorTextFocus && editorLangId == 'coq'"
+    }
+]
