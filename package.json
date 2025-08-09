@@ -4,22 +4,18 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "toRepo": "jiti ./index.ts --to-repo",
-    "fromRepo": "jiti ./index.ts --from-repo"
+    "toRepo": "tsx ./index.ts --to-repo",
+    "fromRepo": "tsx ./index.ts --from-repo"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "@eslint/js": "^9.32.0",
     "@types/node": "^24.2.0",
     "commander": "^14.0.0",
     "eslint": "^9.32.0",
-    "globals": "^16.3.0",
-    "jiti": "^2.5.1",
-    "rimraf": "^6.0.1",
-    "ts-node": "^10.9.2",
-    "tslib": "^2.8.1",
+    "tsx": "^4.20.3",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.39.0"
   },
