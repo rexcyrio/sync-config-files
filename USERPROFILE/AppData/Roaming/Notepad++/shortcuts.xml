@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <NotepadPlus>
     <InternalCommands>
-        <Shortcut id="42036" Ctrl="no" Alt="no" Shift="no" Key="0" />
+        <!-- "ctrl + ]" to increase line indent -->
         <Shortcut id="42008" Ctrl="yes" Alt="no" Shift="no" Key="221" />
+        <!-- "ctrl + [" to decrease line indent -->
         <Shortcut id="42009" Ctrl="yes" Alt="no" Shift="no" Key="219" />
+
+        <!-- "alt + up" to move line up -->
         <Shortcut id="42014" Ctrl="no" Alt="yes" Shift="no" Key="38" />
+        <!-- "alt + down" to move line down -->
         <Shortcut id="42015" Ctrl="no" Alt="yes" Shift="no" Key="40" />
+
+        <!-- "alt + z" to toggle line wrap -->
         <Shortcut id="44022" Ctrl="no" Alt="yes" Shift="no" Key="90" />
+        <!-- "ctrl + shift + 8" to toggle showing whitespace -->
         <Shortcut id="44019" Ctrl="yes" Alt="no" Shift="yes" Key="56" />
+
+        <!-- remove conflicting keyboard shortcut for "ctrl + shift + k" -->
+        <Shortcut id="42036" Ctrl="no" Alt="no" Shift="no" Key="0" />
+        <!-- remove conflicting keyboard shortcut for "alt + up" -->
+        <Shortcut id="50010" Ctrl="no" Alt="no" Shift="no" Key="0" />
+        <!-- remove conflicting keyboard shortcut for "alt + down" -->
+        <Shortcut id="50011" Ctrl="no" Alt="no" Shift="no" Key="0" />
     </InternalCommands>
     <Macros>
         <Macro name="Trim Trailing Space and Save" Ctrl="no" Alt="yes" Shift="yes" Key="83">
@@ -22,6 +36,12 @@
     </UserDefinedCommands>
     <PluginCommands />
     <ScintillaKeys>
+        <!-- "ctrl + shift + k" to delete line -->
         <ScintKey ScintID="2338" menuCmdID="0" Ctrl="yes" Alt="no" Shift="yes" Key="75" />
+
+        <!-- remap conflicting shortcut for "ctrl + ]" -->
+        <ScintKey ScintID="2413" menuCmdID="0" Ctrl="yes" Alt="yes" Shift="yes" Key="221" />
+        <!-- remap conflicting shortcut for "ctrl + [" -->
+        <ScintKey ScintID="2415" menuCmdID="0" Ctrl="yes" Alt="yes" Shift="yes" Key="219" />
     </ScintillaKeys>
 </NotepadPlus>
