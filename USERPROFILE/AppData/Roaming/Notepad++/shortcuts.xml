@@ -11,10 +11,14 @@
         <!-- "alt + down" to move line down -->
         <Shortcut id="42015" Ctrl="no" Alt="yes" Shift="no" Key="40" />
 
-        <!-- "alt + z" to toggle line wrap -->
-        <Shortcut id="44022" Ctrl="no" Alt="yes" Shift="no" Key="90" />
+        <!-- "ctrl + d" to increase selection by selecting next word -->
+        <Shortcut id="42095" Ctrl="yes" Alt="no" Shift="no" Key="68" />
+
         <!-- "ctrl + shift + 8" to toggle showing whitespace -->
         <Shortcut id="44019" Ctrl="yes" Alt="no" Shift="yes" Key="56" />
+
+        <!-- "alt + z" to toggle line wrap -->
+        <Shortcut id="44022" Ctrl="no" Alt="yes" Shift="no" Key="90" />
 
         <!-- remove conflicting keyboard shortcut for "ctrl + shift + k" -->
         <Shortcut id="42036" Ctrl="no" Alt="no" Shift="no" Key="0" />
@@ -39,9 +43,21 @@
         <!-- "ctrl + shift + k" to delete line -->
         <ScintKey ScintID="2338" menuCmdID="0" Ctrl="yes" Alt="no" Shift="yes" Key="75" />
 
+        <!-- "shift + alt + up/down" to duplicate line -->
+        <ScintKey ScintID="2404" menuCmdID="42010" Ctrl="no" Alt="yes" Shift="yes" Key="38">
+            <NextKey Ctrl="no" Alt="yes" Shift="yes" Key="40" />
+        </ScintKey>
+
+        <!-- "ctrl + alt + down" to add cursor below -->
+        <ScintKey ScintID="2426" menuCmdID="0" Ctrl="yes" Alt="yes" Shift="no" Key="40" />
+        <!-- "ctrl + alt + up" to add cursor above -->
+        <ScintKey ScintID="2427" menuCmdID="0" Ctrl="yes" Alt="yes" Shift="no" Key="38" />
+
         <!-- remap conflicting shortcut for "ctrl + ]" -->
         <ScintKey ScintID="2413" menuCmdID="0" Ctrl="yes" Alt="yes" Shift="yes" Key="221" />
         <!-- remap conflicting shortcut for "ctrl + [" -->
         <ScintKey ScintID="2415" menuCmdID="0" Ctrl="yes" Alt="yes" Shift="yes" Key="219" />
+        <!-- remap conflicting shortcut for "ctrl + d" -->
+        <ScintKey ScintID="2469" menuCmdID="0" Ctrl="yes" Alt="yes" Shift="yes" Key="68" />
     </ScintillaKeys>
 </NotepadPlus>
