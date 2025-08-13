@@ -3,7 +3,7 @@
     email = stefancyrio@gmail.com
 [core]
     autocrlf = false
-    safecrlf = false
+    safecrlf = true
     ignoreCase = false
 [alias]
     history = log --pretty=format:\"%C(auto)%h %ad | %s%d [%an]%C(reset)\" --graph --date=short 
