@@ -35,6 +35,7 @@
     "material-icon-theme.activeIconPack": "react_redux",
     "prettier.tabWidth": 2,
     "editor.tabSize": 2,
+    "files.eol": "\n",
     "cSpell.language": "en-GB,lorem",
     "cSpell.maxNumberOfProblems": 500,
     "cSpell.enabledFileTypes": {
