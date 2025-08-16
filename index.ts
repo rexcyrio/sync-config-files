@@ -213,6 +213,68 @@ const powerShellProfileConfig: Config[] = [
   },
 ];
 
+const everythingConfig: Config[] = [
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "AppData",
+      "Roaming",
+      "Everything",
+      "Everything.ini",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "AppData",
+      "Roaming",
+      "Everything",
+      "Filters.csv",
+    ],
+  },
+];
+
+const shareXConfig: Config[] = [
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "Documents",
+      "ShareX",
+      "ApplicationConfig.json",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "Documents",
+      "ShareX",
+      "ApplicationConfig.json",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "Documents",
+      "ShareX",
+      "HotkeysConfig.json",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "Documents",
+      "ShareX",
+      "UploadersConfig.json",
+    ],
+  },
+];
+
 async function doCopy(copyDirection: CopyDirection) {
   const allConfigs = [
     ...vscodeConfig,
@@ -221,6 +283,8 @@ async function doCopy(copyDirection: CopyDirection) {
     ...homeConfig,
     ...scoopConfig,
     ...powerShellProfileConfig,
+    ...everythingConfig,
+    ...shareXConfig,
   ];
 
   for (const config of allConfigs) {
