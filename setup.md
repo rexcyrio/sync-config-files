@@ -22,6 +22,17 @@ winget install JetBrains.IntelliJIDEA.Community
 
 ## Install [QuickLook](https://github.com/QL-Win/QuickLook/releases/tag/3.7.3) (use `.msi`)
 
+## Install [Everything](https://www.voidtools.com/downloads/)
+
+In `C:\Program Files\Everything\Everything.ini`, ensure that the following settings are applied:
+
+```ini
+app_data=1
+run_as_admin=1
+allow_http_server=0
+allow_etp_server=0
+```
+
 ## Windows 11 Settings
 
 - System > Clipboard > Clear clipboard data
