@@ -224,16 +224,6 @@ const everythingConfig: Config[] = [
       "Everything.ini",
     ],
   },
-  {
-    type: Resource.file,
-    pathComponents: [
-      // <USERPROFILE>
-      "AppData",
-      "Roaming",
-      "Everything",
-      "Filters.csv",
-    ],
-  },
 ];
 
 const shareXConfig: Config[] = [
