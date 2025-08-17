@@ -33,6 +33,13 @@ allow_http_server=0
 allow_etp_server=0
 ```
 
+1. Open Everything
+1. Open Settings (Ctrl + P)
+1. Go to General
+1. Ensure it looks like this:
+
+    ![Screenshot of Everything > Settings > General](Everything_1Vv778FR6L.png)
+
 ## Windows 11 Settings
 
 - System > Clipboard > Clear clipboard data
