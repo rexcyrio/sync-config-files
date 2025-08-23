@@ -5,7 +5,7 @@
     "UseDefaultAfterCaptureJob": true,
     "AfterCaptureJob": "CopyImageToClipboard, SaveImageToFile",
     "UseDefaultAfterUploadJob": true,
-    "AfterUploadJob": "None",
+    "AfterUploadJob": "CopyURLToClipboard",
     "UseDefaultDestinations": true,
     "ImageDestination": "Imgur",
     "ImageFileDestination": "Dropbox",
@@ -13,7 +13,7 @@
     "TextFileDestination": "Dropbox",
     "FileDestination": "Dropbox",
     "URLShortenerDestination": "BITLY",
-    "URLSharingServiceDestination": "Twitter",
+    "URLSharingServiceDestination": "Email",
     "OverrideFTP": false,
     "FTPIndex": 0,
     "OverrideCustomUploader": false,
@@ -24,7 +24,7 @@
     "GeneralSettings": {
       "PlaySoundAfterCapture": false,
       "PlaySoundAfterUpload": false,
-      "PlaySoundAfterAction": true,
+      "PlaySoundAfterAction": false,
       "ShowToastNotificationAfterTaskCompleted": true,
       "ToastWindowDuration": 0.0,
       "ToastWindowFadeDuration": 1.0,
@@ -84,6 +84,7 @@
       "CaptureShadowOffset": 100,
       "CaptureClientArea": false,
       "CaptureAutoHideTaskbar": false,
+      "CaptureAutoHideDesktopIcons": false,
       "CaptureCustomRegion": "0, 0, 0, 0",
       "CaptureCustomWindow": "",
       "SurfaceOptions": {
@@ -172,7 +173,7 @@
             "AlignmentHorizontal": "Center",
             "AlignmentVertical": "Center",
             "Gradient": false,
-            "Color2": "240, 240, 240",
+            "Color2": "ButtonFace",
             "GradientMode": "Vertical",
             "EnterKeyNewLine": false
           },
@@ -188,7 +189,7 @@
             "AlignmentHorizontal": "Center",
             "AlignmentVertical": "Center",
             "Gradient": false,
-            "Color2": "240, 240, 240",
+            "Color2": "ButtonFace",
             "GradientMode": "Vertical",
             "EnterKeyNewLine": false
           },
@@ -297,6 +298,7 @@
         "StartDelay": 300,
         "AutoScrollTop": false,
         "ScrollDelay": 300,
+        "ScrollMethod": "MouseWheel",
         "ScrollAmount": 2,
         "AutoIgnoreBottomEdge": true,
         "AutoUpload": false,
@@ -788,7 +790,6 @@
     "ImageShack",
     "Flickr",
     "Photobucket",
-    "Twitter",
     "Chevereto",
     "Vgyme",
     "CustomImageUploader",
@@ -824,7 +825,6 @@
     "Pushbullet",
     "SendSpace",
     "Localhostr",
-    "Jira",
     "Lambda",
     "Pomf",
     "Uguu",
@@ -843,30 +843,6 @@
   "HistorySaveTasks": true,
   "HistoryCheckURL": false,
   "RecentTasks": [
-    {
-      "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-07\\vivaldi_xtLJ5FqUHM.png",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2025-07-04T23:45:03.9060233Z"
-    },
-    {
-      "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-07\\vivaldi_5dYQmXasq6.png",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2025-07-04T23:45:35.178417Z"
-    },
-    {
-      "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-07\\I3u5vUYtaP.png",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2025-07-08T10:59:47.1598704Z"
-    },
     {
       "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-07\\vivaldi_EQ43qOsM3u.png",
       "URL": null,
@@ -922,6 +898,30 @@
       "DeletionURL": null,
       "ShortenedURL": null,
       "Time": "2025-08-10T14:22:36.3507722Z"
+    },
+    {
+      "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-08\\UxCATUW0dv.jpg",
+      "URL": null,
+      "ThumbnailURL": null,
+      "DeletionURL": null,
+      "ShortenedURL": null,
+      "Time": "2025-08-17T00:57:10.517021Z"
+    },
+    {
+      "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-08\\Everything_C5caoy8a8f.png",
+      "URL": null,
+      "ThumbnailURL": null,
+      "DeletionURL": null,
+      "ShortenedURL": null,
+      "Time": "2025-08-17T00:57:18.8215599Z"
+    },
+    {
+      "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-08\\Everything_1Vv778FR6L.png",
+      "URL": null,
+      "ThumbnailURL": null,
+      "DeletionURL": null,
+      "ShortenedURL": null,
+      "Time": "2025-08-17T01:54:35.7943774Z"
     }
   ],
   "RecentTasksSave": true,
@@ -938,7 +938,8 @@
     },
     "SplitterDistance": 550,
     "RememberSearchText": false,
-    "SearchText": ""
+    "SearchText": "",
+    "Favorites": false
   },
   "ImageHistorySettings": {
     "RememberWindowState": true,
@@ -950,8 +951,10 @@
     "ThumbnailSize": "150, 150",
     "MaxItemCount": 250,
     "FilterMissingFiles": false,
+    "ImageOnly": true,
     "RememberSearchText": false,
-    "SearchText": ""
+    "SearchText": "",
+    "Favorites": false
   },
   "DontShowPrintSettingsDialog": false,
   "PrintSettings": {
@@ -997,7 +1000,7 @@
     "Black",
     "186, 255, 255",
     "181, 255, 243",
-    "227, 227, 227",
+    "ControlLight",
     "Gray",
     "0, 148, 255",
     "182, 255, 0",
@@ -1039,7 +1042,6 @@
   "RotateImageByExifOrientationData": true,
   "PNGStripColorSpaceInformation": false,
   "DisableUpload": true,
-  "AcceptInvalidSSLCertificates": false,
   "URLEncodeIgnoreEmoji": true,
   "ShowUploadWarning": true,
   "ShowMultiUploadWarning": true,
@@ -1052,5 +1054,5 @@
   "DropAlignment": "BottomRight",
   "DropOpacity": 100,
   "DropHoverOpacity": 255,
-  "ApplicationVersion": "17.1.0"
+  "ApplicationVersion": "18.0.1"
 }
