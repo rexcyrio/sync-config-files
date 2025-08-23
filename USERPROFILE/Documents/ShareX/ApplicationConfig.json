@@ -366,18 +366,7 @@
       "UploaderFilters": []
     },
     "UseDefaultActions": true,
-    "ExternalPrograms": [
-      {
-        "IsActive": false,
-        "Name": "Paint",
-        "Path": "C:\\Windows\\system32\\mspaint.exe",
-        "Args": "\"$input\"",
-        "OutputExtension": null,
-        "Extensions": null,
-        "HiddenWindow": false,
-        "DeleteInputFile": false
-      }
-    ],
+    "ExternalPrograms": [],
     "UseDefaultToolsSettings": true,
     "ToolsSettings": {
       "ScreenColorPickerFormat": "$hex",
@@ -842,89 +831,8 @@
   ],
   "HistorySaveTasks": true,
   "HistoryCheckURL": false,
-  "RecentTasks": [
-    {
-      "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-07\\vivaldi_EQ43qOsM3u.png",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2025-07-08T13:21:54.0658059Z"
-    },
-    {
-      "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-07\\vivaldi_59ADiqcFYH.png",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2025-07-09T00:25:52.2788867Z"
-    },
-    {
-      "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-07\\vivaldi_XQ5AKYW7r4.png",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2025-07-10T11:04:36.7903308Z"
-    },
-    {
-      "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-07\\vivaldi_xOgxqITevn.png",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2025-07-17T01:13:38.4283996Z"
-    },
-    {
-      "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-07\\vivaldi_QWuzoBvqDl.png",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2025-07-17T04:45:28.5894095Z"
-    },
-    {
-      "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-07\\SumatraPDF_FyRUmSkS2O.png",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2025-07-21T08:09:09.221627Z"
-    },
-    {
-      "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-08\\EXCEL_afpvN5YVAp.png",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2025-08-10T14:22:36.3507722Z"
-    },
-    {
-      "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-08\\UxCATUW0dv.jpg",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2025-08-17T00:57:10.517021Z"
-    },
-    {
-      "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-08\\Everything_C5caoy8a8f.png",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2025-08-17T00:57:18.8215599Z"
-    },
-    {
-      "FilePath": "C:\\Users\\Stefan Lee\\Documents\\ShareX\\Screenshots\\2025-08\\Everything_1Vv778FR6L.png",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2025-08-17T01:54:35.7943774Z"
-    }
-  ],
-  "RecentTasksSave": true,
+  "RecentTasks": null,
+  "RecentTasksSave": false,
   "RecentTasksMaxCount": 10,
   "RecentTasksShowInMainWindow": true,
   "RecentTasksShowInTrayMenu": true,
@@ -944,8 +852,8 @@
   "ImageHistorySettings": {
     "RememberWindowState": true,
     "WindowState": {
-      "Location": "0, 0",
-      "Size": "0, 0",
+      "Location": "330, 78",
+      "Size": "1260, 873",
       "IsMaximized": false
     },
     "ThumbnailSize": "150, 150",
