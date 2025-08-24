@@ -12,7 +12,7 @@
         <Shortcut id="42015" Ctrl="no" Alt="yes" Shift="no" Key="40" />
 
         <!-- "ctrl + d" to increase selection by selecting next word -->
-        <Shortcut id="42095" Ctrl="yes" Alt="no" Shift="no" Key="68" />
+        <Shortcut id="42094" Ctrl="yes" Alt="no" Shift="no" Key="68" />
 
         <!-- "ctrl + shift + 8" to toggle showing whitespace -->
         <Shortcut id="44019" Ctrl="yes" Alt="no" Shift="yes" Key="56" />
