@@ -34,11 +34,10 @@ set tabpagemax=100
 set backspace=indent,eol,start
 set belloff=all
 
-" disabled on Windows PowerShell
-" let &t_SI = "\<Esc>[6 q"
-" let &t_SR = "\<Esc>[4 q"
-" let &t_EI = "\<Esc>[2 q"
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
-" set ttimeout
-" set ttimeoutlen=1
-" set ttyfast
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
