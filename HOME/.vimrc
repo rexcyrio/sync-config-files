@@ -1,0 +1,43 @@
+filetype plugin indent on
+set autoindent
+set expandtab
+set shiftwidth=4
+set smartindent
+set smarttab
+set tabstop=4
+
+set hlsearch
+set ignorecase
+set incsearch
+set smartcase
+
+set linebreak
+set scrolloff=1
+set sidescrolloff=5
+syntax enable
+
+set laststatus=2
+set ruler
+set wildmenu
+set cursorline
+set number
+set title
+
+set confirm
+set spell
+
+set showtabline=2
+set showcmd
+
+set tabpagemax=100
+
+set backspace=indent,eol,start
+set belloff=all
+
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
