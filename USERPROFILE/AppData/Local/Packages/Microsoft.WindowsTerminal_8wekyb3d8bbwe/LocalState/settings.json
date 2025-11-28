@@ -1,0 +1,108 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": [],
+    "copyFormatting": "none",
+    "copyOnSelect": true,
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "keybindings": [],
+    "newTabMenu": [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": {
+        "defaults": {
+            "bellStyle": "none"
+        },
+        "list": [
+            {
+                "colorScheme": "Campbell Powershell",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "colorScheme": "Solarized Dark Higher Contrast",
+                "cursorShape": "filledBox",
+                "font": {
+                    "face": "Roboto Mono"
+                },
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{4345f3f9-1167-55a5-93f7-5ed76d445dd0}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{9136a2cb-2914-5dda-bdb9-9494f783c47e}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "colorScheme": "Solarized Dark Higher Contrast",
+                "cursorShape": "filledBox",
+                "guid": "{46ca431a-3a87-5fb3-83cd-11ececc031d2}",
+                "hidden": false,
+                "name": "kali-linux",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{36c5fb01-36bf-55d7-9a79-a468feeebca3}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 18",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{db86558c-bc1f-5cad-86dc-8d54c6dc611b}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 18",
+                "source": "Windows.Terminal.VisualStudio"
+            }
+        ]
+    },
+    "schemes": [
+        {
+            "background": "#001E27",
+            "black": "#002831",
+            "blue": "#2176C7",
+            "brightBlack": "#006488",
+            "brightBlue": "#178EC8",
+            "brightCyan": "#00B39E",
+            "brightGreen": "#51EF84",
+            "brightPurple": "#E24D8E",
+            "brightRed": "#F5163B",
+            "brightWhite": "#FCF4DC",
+            "brightYellow": "#B27E28",
+            "cursorColor": "#F34B00",
+            "cyan": "#259286",
+            "foreground": "#9CC2C3",
+            "green": "#6CBE6C",
+            "name": "Solarized Dark Higher Contrast",
+            "purple": "#C61C6F",
+            "red": "#D11C24",
+            "selectionBackground": "#003748",
+            "white": "#EAE3CB",
+            "yellow": "#A57706"
+        }
+    ],
+    "theme": "light",
+    "themes": []
+}

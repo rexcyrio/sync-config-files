@@ -265,6 +265,21 @@ const shareXConfig: Config[] = [
   },
 ];
 
+const windowsTerminalConfig: Config[] = [
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      "AppData",
+      "Local",
+      "Packages",
+      "Microsoft.WindowsTerminal_8wekyb3d8bbwe",
+      "LocalState",
+      "settings.json",
+    ],
+  },
+];
+
 async function doCopy(copyDirection: CopyDirection) {
   const allConfigs = [
     ...vscodeConfig,
@@ -275,6 +290,7 @@ async function doCopy(copyDirection: CopyDirection) {
     ...powerShellProfileConfig,
     ...everythingConfig,
     ...shareXConfig,
+    ...windowsTerminalConfig,
   ];
 
   for (const config of allConfigs) {
