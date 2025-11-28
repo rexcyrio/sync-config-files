@@ -68,13 +68,13 @@
             },
             {
                 "guid": "{36c5fb01-36bf-55d7-9a79-a468feeebca3}",
-                "hidden": false,
+                "hidden": true,
                 "name": "Developer Command Prompt for VS 18",
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
                 "guid": "{db86558c-bc1f-5cad-86dc-8d54c6dc611b}",
-                "hidden": false,
+                "hidden": true,
                 "name": "Developer PowerShell for VS 18",
                 "source": "Windows.Terminal.VisualStudio"
             },
