@@ -7,13 +7,28 @@ import { CopyDirection, Resource, type Config } from "./types.js";
 
 const DEBUG = true;
 
-// C:\Users\Stefan Lee\Documents\Development\sync-config-files
+/**
+ * `C:\Users\Stefan Lee\Documents\Development\sync-config-files`
+ */
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// C:\Users\Stefan Lee\Documents\Development\sync-config-files\USERPROFILE
+/**
+ * `C:\Users\Stefan Lee\Documents\Development\sync-config-files\USERPROFILE`
+ */
 const REPO_USERPROFILE = path.join(__dirname, "USERPROFILE");
 
-// C:\Users\Stefan Lee
+/**
+ * `C:\Users\Stefan Lee\Documents\Development\sync-config-files\HOME`
+ */
+const REPO_HOME = path.join(__dirname, "HOME");
+
+/**
+ * `C:\Users\Stefan Lee`
+ *
+ * or
+ *
+ * `/home/stefanlee`
+ */
 const USERPROFILE = os.homedir();
 
 const vscodeConfig: Config[] = [
@@ -186,9 +201,16 @@ const homeConfig: Config[] = [
       "vimrc",
     ],
   },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <USERPROFILE>
+      ".wslconfig",
+    ],
+  },
 ];
 
-const scoopConfig: Config[] = [
+const altSnapConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
@@ -280,13 +302,51 @@ const windowsTerminalConfig: Config[] = [
   },
 ];
 
-async function doCopy(copyDirection: CopyDirection) {
+const homeConfigLinux: Config[] = [
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <HOME>
+      ".gitconfig",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <HOME>
+      ".vimrc",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <HOME>
+      "echo_path.sh",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <HOME>
+      "update.sh",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      // <HOME>
+      "windows.sh",
+    ],
+  },
+];
+
+async function doCopyWindows(copyDirection: CopyDirection) {
   const allConfigs = [
     ...vscodeConfig,
     ...intelliJConfig,
     ...notepadPlusPlusConfig,
     ...homeConfig,
-    ...scoopConfig,
+    ...altSnapConfig,
     ...powerShellProfileConfig,
     ...everythingConfig,
     ...shareXConfig,
@@ -305,6 +365,56 @@ async function doCopy(copyDirection: CopyDirection) {
 
       case CopyDirection.fromRepoToLocalMachine:
         source = path.join(REPO_USERPROFILE, ...config.pathComponents);
+        target = path.join(USERPROFILE, ...config.pathComponents);
+        break;
+
+      default:
+        throw new Error();
+    }
+
+    // mkdir -p
+    await fs.promises.mkdir(path.dirname(target), { recursive: true });
+
+    debugLog(
+      `
+Copying
+  From : '${source}'
+  To   : '${target}'
+`.trim()
+    );
+
+    switch (config.type) {
+      case Resource.file:
+        // overwrite target
+        await fs.promises.copyFile(source, target);
+        break;
+
+      case Resource.folder:
+        // copy entire folder
+        await fs.promises.cp(source, target, { recursive: true });
+        break;
+
+      default:
+        throw new Error(`Unknown type '${config.type}'`);
+    }
+  }
+}
+
+async function doCopyLinux(copyDirection: CopyDirection) {
+  const allConfigs = [...homeConfigLinux];
+
+  for (const config of allConfigs) {
+    let source: string;
+    let target: string;
+
+    switch (copyDirection) {
+      case CopyDirection.fromLocalMachineToRepo:
+        source = path.join(USERPROFILE, ...config.pathComponents);
+        target = path.join(REPO_HOME, ...config.pathComponents);
+        break;
+
+      case CopyDirection.fromRepoToLocalMachine:
+        source = path.join(REPO_HOME, ...config.pathComponents);
         target = path.join(USERPROFILE, ...config.pathComponents);
         break;
 
@@ -380,13 +490,27 @@ function main() {
     return;
   }
 
-  if (isToRepoFlagPresent) {
-    doCopy(CopyDirection.fromLocalMachineToRepo);
-  } else if (isFromRepoFlagPresent) {
-    doCopy(CopyDirection.fromRepoToLocalMachine);
-  } else {
-    // should never reach here
-    throw new Error();
+  const platform = os.platform();
+
+  switch (platform) {
+    case "win32":
+      if (isToRepoFlagPresent) {
+        doCopyWindows(CopyDirection.fromLocalMachineToRepo);
+      } else {
+        doCopyWindows(CopyDirection.fromRepoToLocalMachine);
+      }
+      break;
+
+    case "linux":
+      if (isToRepoFlagPresent) {
+        doCopyLinux(CopyDirection.fromLocalMachineToRepo);
+      } else {
+        doCopyLinux(CopyDirection.fromRepoToLocalMachine);
+      }
+      break;
+
+    default:
+      throw new Error(`Unknown platform '${platform}'`);
   }
 }
 
