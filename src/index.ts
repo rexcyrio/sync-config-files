@@ -1,41 +1,26 @@
 import { program } from "commander";
 import fs from "node:fs";
-import os from "node:os";
-import path, { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
+import path from "node:path";
+import {
+  IS_LINUX,
+  IS_WINDOWS,
+  LINUX_ROOT,
+  PLATFORM,
+  USERNAME,
+  WINDOWS_ROOT,
+} from "./common.js";
 import { CopyDirection, Resource, type Config } from "./types.js";
+import { setUsernameInPathStringIfAny } from "./utils/pathStringUsername.js";
 
 const DEBUG = true;
-
-/**
- * `C:\Users\Stefan Lee\Documents\Development\sync-config-files`
- */
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
-/**
- * `C:\Users\Stefan Lee\Documents\Development\sync-config-files\USERPROFILE`
- */
-const REPO_USERPROFILE = path.join(__dirname, "USERPROFILE");
-
-/**
- * `C:\Users\Stefan Lee\Documents\Development\sync-config-files\HOME`
- */
-const REPO_HOME = path.join(__dirname, "HOME");
-
-/**
- * `C:\Users\Stefan Lee`
- *
- * or
- *
- * `/home/stefanlee`
- */
-const USERPROFILE = os.homedir();
 
 const vscodeConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "AppData",
       "Roaming",
       "Code",
@@ -46,7 +31,9 @@ const vscodeConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "AppData",
       "Roaming",
       "Code",
@@ -57,7 +44,9 @@ const vscodeConfig: Config[] = [
   {
     type: Resource.folder,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "AppData",
       "Roaming",
       "Code",
@@ -74,7 +63,9 @@ const intelliJConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "AppData",
       "Roaming",
       "JetBrains",
@@ -86,7 +77,9 @@ const intelliJConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "AppData",
       "Roaming",
       "JetBrains",
@@ -98,7 +91,9 @@ const intelliJConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "AppData",
       "Roaming",
       "JetBrains",
@@ -110,7 +105,9 @@ const intelliJConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "AppData",
       "Roaming",
       "JetBrains",
@@ -122,7 +119,9 @@ const intelliJConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "AppData",
       "Roaming",
       "JetBrains",
@@ -134,7 +133,9 @@ const intelliJConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "AppData",
       "Roaming",
       "JetBrains",
@@ -149,7 +150,9 @@ const notepadPlusPlusConfig: Config[] = [
   {
     type: Resource.folder,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "AppData",
       "Roaming",
       "Notepad++",
@@ -159,7 +162,9 @@ const notepadPlusPlusConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "AppData",
       "Roaming",
       "Notepad++",
@@ -169,7 +174,9 @@ const notepadPlusPlusConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "AppData",
       "Roaming",
       "Notepad++",
@@ -181,32 +188,19 @@ const notepadPlusPlusConfig: Config[] = [
 const homeConfig: Config[] = [
   {
     type: Resource.file,
-    pathComponents: [
-      // <USERPROFILE>
-      "scoop.ps1",
-    ],
+    pathComponents: ["C:", "Users", "__USERNAME__", "scoop.ps1"],
   },
   {
     type: Resource.file,
-    pathComponents: [
-      // <USERPROFILE>
-      ".gitconfig",
-    ],
+    pathComponents: ["C:", "Users", "__USERNAME__", ".gitconfig"],
   },
   {
     type: Resource.file,
-    pathComponents: [
-      // <USERPROFILE>
-      "vimfiles",
-      "vimrc",
-    ],
+    pathComponents: ["C:", "Users", "__USERNAME__", "vimfiles", "vimrc"],
   },
   {
     type: Resource.file,
-    pathComponents: [
-      // <USERPROFILE>
-      ".wslconfig",
-    ],
+    pathComponents: ["C:", "Users", "__USERNAME__", ".wslconfig"],
   },
 ];
 
@@ -214,7 +208,9 @@ const altSnapConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "scoop",
       "persist",
       "altsnap",
@@ -227,7 +223,9 @@ const powerShellProfileConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "Documents",
       "WindowsPowerShell",
       "Microsoft.PowerShell_profile.ps1",
@@ -239,7 +237,9 @@ const everythingConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "AppData",
       "Roaming",
       "Everything",
@@ -252,7 +252,9 @@ const shareXConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "Documents",
       "ShareX",
       "ApplicationConfig.json",
@@ -261,7 +263,9 @@ const shareXConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "Documents",
       "ShareX",
       "ApplicationConfig.json",
@@ -270,7 +274,9 @@ const shareXConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "Documents",
       "ShareX",
       "HotkeysConfig.json",
@@ -279,7 +285,9 @@ const shareXConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "Documents",
       "ShareX",
       "UploadersConfig.json",
@@ -291,7 +299,9 @@ const windowsTerminalConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: [
-      // <USERPROFILE>
+      "C:",
+      "Users",
+      "__USERNAME__",
       "AppData",
       "Local",
       "Packages",
@@ -305,121 +315,101 @@ const windowsTerminalConfig: Config[] = [
 const homeConfigLinux: Config[] = [
   {
     type: Resource.file,
-    pathComponents: [
-      // <HOME>
-      ".gitconfig",
-    ],
+    pathComponents: ["home", "__USERNAME__", ".gitconfig"],
   },
   {
     type: Resource.file,
-    pathComponents: [
-      // <HOME>
-      ".vimrc",
-    ],
+    pathComponents: ["home", "__USERNAME__", ".vimrc"],
   },
   {
     type: Resource.file,
-    pathComponents: [
-      // <HOME>
-      "echo_path.sh",
-    ],
+    pathComponents: ["home", "__USERNAME__", "echo_path.sh"],
   },
   {
     type: Resource.file,
-    pathComponents: [
-      // <HOME>
-      "update.sh",
-    ],
+    pathComponents: ["home", "__USERNAME__", "update.sh"],
   },
   {
     type: Resource.file,
-    pathComponents: [
-      // <HOME>
-      "windows.sh",
-    ],
+    pathComponents: ["home", "__USERNAME__", "windows.sh"],
   },
 ];
 
-async function doCopyWindows(copyDirection: CopyDirection) {
-  const allConfigs = [
-    ...vscodeConfig,
-    ...intelliJConfig,
-    ...notepadPlusPlusConfig,
-    ...homeConfig,
-    ...altSnapConfig,
-    ...powerShellProfileConfig,
-    ...everythingConfig,
-    ...shareXConfig,
-    ...windowsTerminalConfig,
-  ];
+const etcWslConfigLinux: Config[] = [
+  {
+    type: Resource.file,
+    pathComponents: ["etc", "wsl.conf"],
+  },
+];
 
-  for (const config of allConfigs) {
-    let source: string;
-    let target: string;
+async function doCopy(copyDirection: CopyDirection) {
+  let allConfigs: Config[];
 
-    switch (copyDirection) {
-      case CopyDirection.fromLocalMachineToRepo:
-        source = path.join(USERPROFILE, ...config.pathComponents);
-        target = path.join(REPO_USERPROFILE, ...config.pathComponents);
-        break;
-
-      case CopyDirection.fromRepoToLocalMachine:
-        source = path.join(REPO_USERPROFILE, ...config.pathComponents);
-        target = path.join(USERPROFILE, ...config.pathComponents);
-        break;
-
-      default:
-        throw new Error();
-    }
-
-    // mkdir -p
-    await fs.promises.mkdir(path.dirname(target), { recursive: true });
-
-    debugLog(
-      `
-Copying
-  From : '${source}'
-  To   : '${target}'
-`.trim()
-    );
-
-    switch (config.type) {
-      case Resource.file:
-        // overwrite target
-        await fs.promises.copyFile(source, target);
-        break;
-
-      case Resource.folder:
-        // copy entire folder
-        await fs.promises.cp(source, target, { recursive: true });
-        break;
-
-      default:
-        throw new Error(`Unknown type '${config.type}'`);
-    }
+  if (IS_WINDOWS) {
+    allConfigs = [
+      ...vscodeConfig,
+      ...intelliJConfig,
+      ...notepadPlusPlusConfig,
+      ...homeConfig,
+      ...altSnapConfig,
+      ...powerShellProfileConfig,
+      ...everythingConfig,
+      ...shareXConfig,
+      ...windowsTerminalConfig,
+    ];
+  } else if (IS_LINUX) {
+    allConfigs = [...homeConfigLinux, ...etcWslConfigLinux];
+  } else {
+    throw new Error(`Unknown platform '${PLATFORM}'`);
   }
-}
-
-async function doCopyLinux(copyDirection: CopyDirection) {
-  const allConfigs = [...homeConfigLinux];
 
   for (const config of allConfigs) {
+    // `C:\Users\__USERNAME__\AppData\Roaming\...`
+    const symbolicMachinePath = path.join(...config.pathComponents);
+
+    // `C:\Users\Stefan Lee\AppData\Roaming\...`
+    const concreteMachinePath = setUsernameInPathStringIfAny(
+      symbolicMachinePath,
+      USERNAME
+    );
+
+    let repoPath: string;
+
+    if (IS_WINDOWS) {
+      // `C:\Users\__USERNAME__\AppData\Roaming\...`
+      repoPath = symbolicMachinePath;
+
+      // `C\Users\__USERNAME__\AppData\Roaming\...`
+      repoPath = repoPath.replace(":", "");
+
+      // `C:\Users\Stefan Lee\Documents\Development\sync-config-files\WINDOWS_ROOT\C\Users\__USERNAME__\AppData\Roaming...`
+      repoPath = path.join(WINDOWS_ROOT, repoPath);
+    } else if (IS_LINUX) {
+      // `/home/__USERNAME__`
+      repoPath = symbolicMachinePath;
+
+      // `/home/stefanlee/sync-config-files/home/__USERNAME__`
+      repoPath = path.join(LINUX_ROOT, repoPath);
+    } else {
+      throw new Error(`Unknown platform '${PLATFORM}'`);
+    }
+
     let source: string;
     let target: string;
 
     switch (copyDirection) {
       case CopyDirection.fromLocalMachineToRepo:
-        source = path.join(USERPROFILE, ...config.pathComponents);
-        target = path.join(REPO_HOME, ...config.pathComponents);
+        source = concreteMachinePath;
+        target = repoPath;
         break;
 
       case CopyDirection.fromRepoToLocalMachine:
-        source = path.join(REPO_HOME, ...config.pathComponents);
-        target = path.join(USERPROFILE, ...config.pathComponents);
+        source = repoPath;
+        target = concreteMachinePath;
         break;
 
       default:
-        throw new Error();
+        throw new Error(`Unknown copyDirection '${copyDirection}'`);
     }
 
     // mkdir -p
@@ -445,7 +435,7 @@ Copying
         break;
 
       default:
-        throw new Error(`Unknown type '${config.type}'`);
+        throw new Error(`Unknown config.type '${config.type}'`);
     }
   }
 }
@@ -490,27 +480,12 @@ function main() {
     return;
   }
 
-  const platform = os.platform();
-
-  switch (platform) {
-    case "win32":
-      if (isToRepoFlagPresent) {
-        doCopyWindows(CopyDirection.fromLocalMachineToRepo);
-      } else {
-        doCopyWindows(CopyDirection.fromRepoToLocalMachine);
-      }
-      break;
-
-    case "linux":
-      if (isToRepoFlagPresent) {
-        doCopyLinux(CopyDirection.fromLocalMachineToRepo);
-      } else {
-        doCopyLinux(CopyDirection.fromRepoToLocalMachine);
-      }
-      break;
-
-    default:
-      throw new Error(`Unknown platform '${platform}'`);
+  if (isToRepoFlagPresent) {
+    doCopy(CopyDirection.fromLocalMachineToRepo);
+  } else if (isFromRepoFlagPresent) {
+    doCopy(CopyDirection.fromRepoToLocalMachine);
+  } else {
+    throw new Error();
   }
 }
 

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "toRepo": "tsx ./index.ts --to-repo",
-    "fromRepo": "tsx ./index.ts --from-repo"
+    "toRepo": "tsx ./src/index.ts --to-repo",
+    "fromRepo": "tsx ./src/index.ts --from-repo"
   },
   "keywords": [],
   "author": "",
