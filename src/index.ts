@@ -315,30 +315,30 @@ const windowsTerminalConfig: Config[] = [
 const homeConfigLinux: Config[] = [
   {
     type: Resource.file,
-    pathComponents: ["home", "__USERNAME__", ".gitconfig"],
+    pathComponents: ["/home", "__USERNAME__", ".gitconfig"],
   },
   {
     type: Resource.file,
-    pathComponents: ["home", "__USERNAME__", ".vimrc"],
+    pathComponents: ["/home", "__USERNAME__", ".vimrc"],
   },
   {
     type: Resource.file,
-    pathComponents: ["home", "__USERNAME__", "echo_path.sh"],
+    pathComponents: ["/home", "__USERNAME__", "echo_path.sh"],
   },
   {
     type: Resource.file,
-    pathComponents: ["home", "__USERNAME__", "update.sh"],
+    pathComponents: ["/home", "__USERNAME__", "update.sh"],
   },
   {
     type: Resource.file,
-    pathComponents: ["home", "__USERNAME__", "windows.sh"],
+    pathComponents: ["/home", "__USERNAME__", "windows.sh"],
   },
 ];
 
 const etcWslConfigLinux: Config[] = [
   {
     type: Resource.file,
-    pathComponents: ["etc", "wsl.conf"],
+    pathComponents: ["/etc", "wsl.conf"],
   },
 ];
 
