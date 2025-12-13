@@ -144,6 +144,20 @@ const intelliJConfig: Config[] = [
       "terminal-font.xml",
     ],
   },
+  {
+    type: Resource.file,
+    pathComponents: [
+      "C:",
+      "Users",
+      "__USERNAME__",
+      "AppData",
+      "Roaming",
+      "JetBrains",
+      intelliJIdentifier,
+      "options",
+      "git.xml",
+    ],
+  },
 ];
 
 const notepadPlusPlusConfig: Config[] = [
