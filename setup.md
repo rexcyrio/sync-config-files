@@ -105,3 +105,18 @@ allow_etp_server=0
 - Task Manager > Performance > right-click CPU graph and change graph to "Logical processors"
 - Task Manager > Details > sort by name in ascending order
 - Task Manager > Services > sort by name in ascending order
+
+## WSL2
+
+In `~/.bashrc`, add the following lines:
+
+```bash
+if [ "$TERM_PROGRAM" == "vscode" ]; then                                                                                                                                         
+    # fix vscode vim replacing first character in file with 'g'
+    export TERM=linux
+fi
+```
+
+```bash
+alias ll='LC_COLLATE=C ls -alF'    
+```
