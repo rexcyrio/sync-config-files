@@ -120,3 +120,13 @@ fi
 ```bash
 alias ll='LC_COLLATE=C ls -alF'
 ```
+
+If WSL2 (with `systemd` enabled) encounters problems with missing files in the `/run/user/1000/` directory:
+
+```bash
+# enable linger
+sudo loginctl enable-linger $USER
+
+# check linger status
+loginctl user-status $USER
+```
