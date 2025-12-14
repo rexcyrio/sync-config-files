@@ -49,6 +49,7 @@ allow_etp_server=0
 - System > Multitasking > Show tabs from apps when snapping or pressing alt tab > Don't show
 - System > Notifications > (expand first item) > Show notification bell icon
 - System > Display > Night light > Enable (strength=50)
+- System > Display > Brightness > Change brightness based on content > Off
 - System > Display > Scale > 100% or 125%
 - System > Power & battery > choose all "Energy recommendations"
 - System > Power & battery > Power Mode > Best Power Efficiency
