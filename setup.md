@@ -111,12 +111,12 @@ allow_etp_server=0
 In `~/.bashrc`, add the following lines:
 
 ```bash
-if [ "$TERM_PROGRAM" == "vscode" ]; then                                                                                                                                         
+if [ "$TERM_PROGRAM" == "vscode" ]; then
     # fix vscode vim replacing first character in file with 'g'
     export TERM=linux
 fi
 ```
 
 ```bash
-alias ll='LC_COLLATE=C ls -alF'    
+alias ll='LC_COLLATE=C ls -alF'
 ```
