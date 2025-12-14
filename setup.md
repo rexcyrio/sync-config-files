@@ -38,7 +38,7 @@ allow_etp_server=0
 1. Go to General
 1. Ensure it looks like this:
 
-    ![Screenshot of Everything > Settings > General](./img/Everything_1Vv778FR6L.png)
+    ![Screenshot of Everything > Settings > General](./img/Everything_udaE8qyBDe.png)
 
 ## Windows 11 Settings
 
