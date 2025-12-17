@@ -83,6 +83,7 @@ allow_etp_server=0
 - Personalisation > Taskbar > Taskbar behaviours > Taskbar alignment > Left
 - Personalisation > Taskbar > Taskbar behaviours > Select the far corner of the taskbar to show the desktop
 - Personalisation > Device usage > (everything off)
+- Personalisation > Dynamic Lighting > Use Dynamic Lighting on my devices > Off
 
 - Apps > Startup > disable useless startup apps (alternatively, open Task Manager > Startup apps > disable useless startup apps)
 
