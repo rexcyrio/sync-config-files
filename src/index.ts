@@ -57,7 +57,7 @@ const vscodeConfig: Config[] = [
 ];
 
 // might need to change this as needed
-const intelliJIdentifier = "IdeaIC2025.2";
+const intelliJIdentifier = "IntelliJIdea2025.3";
 
 const intelliJConfig: Config[] = [
   {
@@ -86,6 +86,48 @@ const intelliJConfig: Config[] = [
       intelliJIdentifier,
       "keymaps",
       "VSCode copy.xml",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      "C:",
+      "Users",
+      "__USERNAME__",
+      "AppData",
+      "Roaming",
+      "JetBrains",
+      intelliJIdentifier,
+      "idea64.exe.vmoptions",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      "C:",
+      "Users",
+      "__USERNAME__",
+      "AppData",
+      "Roaming",
+      "JetBrains",
+      intelliJIdentifier,
+      "options",
+      "windows",
+      "keymap.xml",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      "C:",
+      "Users",
+      "__USERNAME__",
+      "AppData",
+      "Roaming",
+      "JetBrains",
+      intelliJIdentifier,
+      "options",
+      "colors.scheme.xml",
     ],
   },
   {
@@ -127,7 +169,35 @@ const intelliJConfig: Config[] = [
       "JetBrains",
       intelliJIdentifier,
       "options",
+      "git.xml",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      "C:",
+      "Users",
+      "__USERNAME__",
+      "AppData",
+      "Roaming",
+      "JetBrains",
+      intelliJIdentifier,
+      "options",
       "ide.general.xml",
+    ],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      "C:",
+      "Users",
+      "__USERNAME__",
+      "AppData",
+      "Roaming",
+      "JetBrains",
+      intelliJIdentifier,
+      "options",
+      "keymapFlags.xml",
     ],
   },
   {
@@ -155,7 +225,7 @@ const intelliJConfig: Config[] = [
       "JetBrains",
       intelliJIdentifier,
       "options",
-      "git.xml",
+      "terminal.xml",
     ],
   },
 ];
@@ -387,26 +457,7 @@ async function doCopy(copyDirection: CopyDirection) {
       USERNAME
     );
 
-    let repoPath: string;
-
-    if (IS_WINDOWS) {
-      // `C:\Users\__USERNAME__\AppData\Roaming\...`
-      repoPath = symbolicMachinePath;
-
-      // `C\Users\__USERNAME__\AppData\Roaming\...`
-      repoPath = repoPath.replace(":", "");
-
-      // `C:\Users\Stefan Lee\Documents\Development\sync-config-files\WINDOWS_ROOT\C\Users\__USERNAME__\AppData\Roaming...`
-      repoPath = path.join(WINDOWS_ROOT, repoPath);
-    } else if (IS_LINUX) {
-      // `/home/__USERNAME__`
-      repoPath = symbolicMachinePath;
-
-      // `/home/stefanlee/sync-config-files/home/__USERNAME__`
-      repoPath = path.join(LINUX_ROOT, repoPath);
-    } else {
-      throw new Error(`Unknown platform '${PLATFORM}'`);
-    }
+    const repoPath = convertToRepoPath(symbolicMachinePath);
 
     let source: string;
     let target: string;
@@ -452,6 +503,55 @@ Copying
         throw new Error(`Unknown config.type '${config.type}'`);
     }
   }
+}
+
+function convertToRepoPath(symbolicMachinePath: string) {
+  let repoPath: string;
+
+  if (IS_WINDOWS) {
+    // `C:\Users\__USERNAME__\AppData\Roaming\...`
+    repoPath = symbolicMachinePath;
+
+    // `C\Users\__USERNAME__\AppData\Roaming\...`
+    repoPath = repoPath.replace(":", "");
+
+    // `C:\Users\Stefan Lee\Documents\Development\sync-config-files\WINDOWS_ROOT\C\Users\__USERNAME__\AppData\Roaming...`
+    repoPath = path.join(WINDOWS_ROOT, repoPath);
+  } else if (IS_LINUX) {
+    // `/home/__USERNAME__`
+    repoPath = symbolicMachinePath;
+
+    // `/home/stefanlee/sync-config-files/home/__USERNAME__`
+    repoPath = path.join(LINUX_ROOT, repoPath);
+  } else {
+    throw new Error(`Unknown platform '${PLATFORM}'`);
+  }
+
+  return repoPath;
+}
+
+async function listIntelliJExtensions() {
+  const symbolicMachinePath = path.join(
+    "C:",
+    "Users",
+    "__USERNAME__",
+    "AppData",
+    "Roaming",
+    "JetBrains",
+    intelliJIdentifier,
+    "plugins"
+  );
+
+  const concreteMachinePath = setUsernameInPathStringIfAny(
+    symbolicMachinePath,
+    USERNAME
+  );
+
+  const pluginNames = await fs.promises.readdir(concreteMachinePath);
+  const listOfPluginNamesAsSingleString = pluginNames.join("\n");
+
+  const repoPath = convertToRepoPath(symbolicMachinePath);
+  await fs.promises.writeFile(repoPath, listOfPluginNamesAsSingleString);
 }
 
 // console.log() uses any[]
@@ -501,6 +601,8 @@ function main() {
   } else {
     throw new Error();
   }
+
+  listIntelliJExtensions();
 }
 
 main();
