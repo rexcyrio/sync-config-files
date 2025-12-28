@@ -14,6 +14,10 @@ import { setUsernameInPathStringIfAny } from "./utils/pathStringUsername.js";
 
 const DEBUG = true;
 
+const WINDOWS_PLATFORM_NAME = "-win32-";
+const LINUX_PLATFORM_NAME = "-linux-";
+const GENERIC_PLATFORM_NAME = "-platform-";
+
 const vscodeConfig: Config[] = [
   {
     type: Resource.file,
@@ -426,6 +430,36 @@ const etcWslConfigLinux: Config[] = [
   },
 ];
 
+const vscodeExtensionsWindows: Config[] = [
+  {
+    type: Resource.listFolderContentsOnly,
+    pathComponents: ["C:", "Users", "__USERNAME__", ".vscode", "extensions"],
+  },
+];
+
+const vscodeExtensionsWsl2: Config[] = [
+  {
+    type: Resource.listFolderContentsOnly,
+    pathComponents: ["/home", "__USERNAME__", ".vscode-server", "extensions"],
+  },
+];
+
+const intelliJExtensions: Config[] = [
+  {
+    type: Resource.listFolderContentsOnly,
+    pathComponents: [
+      "C:",
+      "Users",
+      "__USERNAME__",
+      "AppData",
+      "Roaming",
+      "JetBrains",
+      intelliJIdentifier,
+      "plugins",
+    ],
+  },
+];
+
 async function doCopy(copyDirection: CopyDirection) {
   let allConfigs: Config[];
 
@@ -440,9 +474,15 @@ async function doCopy(copyDirection: CopyDirection) {
       ...everythingConfig,
       ...shareXConfig,
       ...windowsTerminalConfig,
+      ...intelliJExtensions,
+      ...vscodeExtensionsWindows,
     ];
   } else if (IS_LINUX) {
-    allConfigs = [...homeConfigLinux, ...etcWslConfigLinux];
+    allConfigs = [
+      ...homeConfigLinux,
+      ...etcWslConfigLinux,
+      ...vscodeExtensionsWsl2,
+    ];
   } else {
     throw new Error(`Unknown platform '${PLATFORM}'`);
   }
@@ -499,6 +539,22 @@ Copying
         await fs.promises.cp(source, target, { recursive: true });
         break;
 
+      case Resource.listFolderContentsOnly:
+        // ls the folder contents
+        let listOfExtensionNames = await fs.promises.readdir(source);
+
+        listOfExtensionNames = listOfExtensionNames.map((extensionName) =>
+          extensionName
+            .replace(WINDOWS_PLATFORM_NAME, GENERIC_PLATFORM_NAME)
+            .replace(LINUX_PLATFORM_NAME, GENERIC_PLATFORM_NAME)
+        );
+
+        const listOfExtensionNamesAsSingleString =
+          listOfExtensionNames.join("\n");
+
+        await fs.promises.writeFile(target, listOfExtensionNamesAsSingleString);
+        break;
+
       default:
         throw new Error(`Unknown config.type '${config.type}'`);
     }
@@ -530,30 +586,6 @@ function convertToRepoPath(symbolicMachinePath: string) {
   return repoPath;
 }
 
-async function listIntelliJExtensions() {
-  const symbolicMachinePath = path.join(
-    "C:",
-    "Users",
-    "__USERNAME__",
-    "AppData",
-    "Roaming",
-    "JetBrains",
-    intelliJIdentifier,
-    "plugins"
-  );
-
-  const concreteMachinePath = setUsernameInPathStringIfAny(
-    symbolicMachinePath,
-    USERNAME
-  );
-
-  const pluginNames = await fs.promises.readdir(concreteMachinePath);
-  const listOfPluginNamesAsSingleString = pluginNames.join("\n");
-
-  const repoPath = convertToRepoPath(symbolicMachinePath);
-  await fs.promises.writeFile(repoPath, listOfPluginNamesAsSingleString);
-}
-
 // console.log() uses any[]
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function debugLog(...message: any[]) {
@@ -562,7 +594,7 @@ function debugLog(...message: any[]) {
   }
 }
 
-function main() {
+async function main() {
   const toRepo = {
     cliFlag: "--to-repo",
     name: "toRepo",
@@ -595,14 +627,12 @@ function main() {
   }
 
   if (isToRepoFlagPresent) {
-    doCopy(CopyDirection.fromLocalMachineToRepo);
+    await doCopy(CopyDirection.fromLocalMachineToRepo);
   } else if (isFromRepoFlagPresent) {
-    doCopy(CopyDirection.fromRepoToLocalMachine);
+    await doCopy(CopyDirection.fromRepoToLocalMachine);
   } else {
     throw new Error();
   }
-
-  listIntelliJExtensions();
 }
 
 main();

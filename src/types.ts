@@ -1,6 +1,7 @@
 export enum Resource {
   "file",
   "folder",
+  "listFolderContentsOnly",
 }
 
 export interface Config {
