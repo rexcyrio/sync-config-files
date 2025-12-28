@@ -11,6 +11,7 @@ esbenp.prettier-vscode-11.0.2
 extensions.json
 inferrinizzard.prettier-sql-vscode-1.6.0
 mhutchie.git-graph-1.30.0
+ms-azuretools.vscode-containers-2.3.0
 ms-python.black-formatter-2025.2.0
 ms-python.debugpy-2025.18.0-platform-x64
 ms-python.isort-2025.0.0
@@ -22,6 +23,7 @@ ms-toolsai.jupyter-keymap-1.1.2
 ms-toolsai.jupyter-renderers-1.3.0
 ms-toolsai.vscode-jupyter-cell-tags-0.1.9
 ms-toolsai.vscode-jupyter-slideshow-0.1.6
+ms-vscode-remote.remote-containers-0.434.0
 ms-vscode-remote.remote-wsl-0.104.3
 mtxr.sqltools-0.28.5
 mtxr.sqltools-driver-pg-0.5.7
