@@ -109,6 +109,9 @@
     "gitlens.defaultDateLocale": "system",
     "gitlens.graph.minimap.enabled": false,
     "gitlens.graph.layout": "editor",
+    "workbench.editorAssociations": {
+        "git-rebase-todo": "default"
+    },
     "java.inlayHints.parameterNames.enabled": "none",
     "java.autobuild.enabled": false,
     "emmet.showExpandedAbbreviation": "never",
