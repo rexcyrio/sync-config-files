@@ -26,6 +26,8 @@ NyanProgressBar.jar
 packageChecker
 properties
 protoeditor
+remoteRun
+restClient
 settingsSync
 sh-plugin
 sonarlint-intellij
