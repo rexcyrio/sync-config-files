@@ -6,6 +6,7 @@
     safecrlf = true
     ignoreCase = false
     editor = vim
+    eol = lf
 [alias]
     history = log --pretty=format:\"%C(auto)%h %ad | %s%d [%an]%C(reset)\" --graph --date=short
 [filter "lfs"]
