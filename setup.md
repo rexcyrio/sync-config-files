@@ -81,6 +81,8 @@ allow_etp_server=0
 - Personalisation > Start > (everything off)
 - Personalisation > Taskbar > hide Search, Task view, Widgets
 - Personalisation > Taskbar > Taskbar behaviours > Taskbar alignment > Left
+- Personalisation > Taskbar > Taskbar behaviours > check "Show my taskbar on all displays"
+- Personalisation > Taskbar > Taskbar behaviours > When using multiple displays, show my taskbar apps on > Taskbar where window is open
 - Personalisation > Taskbar > Taskbar behaviours > Select the far corner of the taskbar to show the desktop
 - Personalisation > Device usage > (everything off)
 - Personalisation > Dynamic Lighting > Use Dynamic Lighting on my devices > Off
