@@ -96,7 +96,7 @@ allow_etp_server=0
 - Time & language > Date & time > Set time automatically
 
 - Accessibility > Color filters > open Color filters > select Grayscale
-- Accessibility > Color filters > Enable WIN + ctrl + C
+- Accessibility > Color filters > Enable Win + Ctrl + C
 - Accessibility > Keyboard > Underline access keys
 
 - Privacy & security > Search permissions > History > disable
