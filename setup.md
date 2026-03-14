@@ -53,6 +53,7 @@ allow_etp_server=0
 - System > Display > Scale > 100% or 125%
 - System > Power & battery > choose all "Energy recommendations"
 - System > Power & battery > Power Mode > Best Power Efficiency
+- System > Power & battery > enable Battery percentage
 - System > Power & battery > Energy Saver > Always on
 - Control Panel > Edit power plan > cancel > Choose what the power buttons do > Show "Hibernate" in Power menu
 
