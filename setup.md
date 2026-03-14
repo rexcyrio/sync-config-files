@@ -94,6 +94,7 @@ allow_etp_server=0
 - Time & language > Language & region > Regional format (alternatively, Control Panel > Clock and Regions > Change date, time, or number formats) > add "ddd" to short date
 - Time & language > Date & time > Set time zone automatically
 - Time & language > Date & time > Set time automatically
+- Time & language > Date & time > Show time in Notification Center
 
 - Accessibility > Color filters > open Color filters > select Grayscale
 - Accessibility > Color filters > Enable Win + Ctrl + C
