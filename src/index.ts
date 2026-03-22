@@ -276,19 +276,47 @@ const notepadPlusPlusConfig: Config[] = [
 const homeConfig: Config[] = [
   {
     type: Resource.file,
-    pathComponents: ["C:", "Users", "__USERNAME__", "scoop.ps1"],
-  },
-  {
-    type: Resource.file,
     pathComponents: ["C:", "Users", "__USERNAME__", ".gitconfig"],
   },
   {
     type: Resource.file,
-    pathComponents: ["C:", "Users", "__USERNAME__", "vimfiles", "vimrc"],
+    pathComponents: ["C:", "Users", "__USERNAME__", ".wslconfig"],
   },
   {
     type: Resource.file,
-    pathComponents: ["C:", "Users", "__USERNAME__", ".wslconfig"],
+    pathComponents: ["C:", "Users", "__USERNAME__", "checksum.ps1"],
+  },
+  {
+    type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", "cleanup_IntelliJ.ps1"],
+  },
+  {
+    type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", "datetime.ps1"],
+  },
+  {
+    type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", "echo_PATH.ps1"],
+  },
+  {
+    type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", "explorer_IntelliJ.ps1"],
+  },
+  {
+    type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", "explorer_VSCode.ps1"],
+  },
+  {
+    type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", "explorer_winget.ps1"],
+  },
+  {
+    type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", "scoop.ps1"],
+  },
+  {
+    type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", "vimfiles", "vimrc"],
   },
 ];
 
@@ -494,7 +522,7 @@ async function doCopy(copyDirection: CopyDirection) {
     // `C:\Users\Stefan Lee\AppData\Roaming\...`
     const concreteMachinePath = setUsernameInPathStringIfAny(
       symbolicMachinePath,
-      USERNAME
+      USERNAME,
     );
 
     const repoPath = convertToRepoPath(symbolicMachinePath);
@@ -525,7 +553,7 @@ async function doCopy(copyDirection: CopyDirection) {
 Copying
   From : '${source}'
   To   : '${target}'
-`.trim()
+`.trim(),
     );
 
     switch (config.type) {
@@ -546,7 +574,7 @@ Copying
         listOfExtensionNames = listOfExtensionNames.map((extensionName) =>
           extensionName
             .replace(WINDOWS_PLATFORM_NAME, GENERIC_PLATFORM_NAME)
-            .replace(LINUX_PLATFORM_NAME, GENERIC_PLATFORM_NAME)
+            .replace(LINUX_PLATFORM_NAME, GENERIC_PLATFORM_NAME),
         );
 
         const listOfExtensionNamesAsSingleString =
@@ -612,7 +640,7 @@ async function main() {
 
   if (!isToRepoFlagPresent && !isFromRepoFlagPresent) {
     console.error(
-      `Please specify at least one of the following: '${toRepo.cliFlag}', '${fromRepo.cliFlag}'`
+      `Please specify at least one of the following: '${toRepo.cliFlag}', '${fromRepo.cliFlag}'`,
     );
 
     return;
@@ -620,7 +648,7 @@ async function main() {
 
   if (isToRepoFlagPresent && isFromRepoFlagPresent) {
     console.error(
-      `Please specify only one of the following: '${toRepo.cliFlag}', '${fromRepo.cliFlag}'`
+      `Please specify only one of the following: '${toRepo.cliFlag}', '${fromRepo.cliFlag}'`,
     );
 
     return;
