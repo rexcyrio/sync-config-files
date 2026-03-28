@@ -20,10 +20,10 @@
     "workbench.editor.restoreViewState": false,
     "workbench.localHistory.maxFileEntries": 500,
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorTheme": "Dark+",
     "workbench.colorCustomizations": {
         "editorWhitespace.foreground": "#999999",
-        "[Default Dark+]": {
+        "[Dark+]": {
             "editor.lineHighlightBackground": "#37373D"
         }
     },
