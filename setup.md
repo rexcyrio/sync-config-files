@@ -4,7 +4,8 @@
 
 ```bash
 scoop install altsnap
-scoop install pshazz
+# scoop install pshazz
+scoop install starship
 scoop install scoop-completion
 scoop install scoop-search
 scoop install shutup10
@@ -18,7 +19,11 @@ winget install Microsoft.VisualStudioCode
 winget install JetBrains.IntelliJIDEA.Community
 ```
 
-## Install [Roboto Mono Font](https://fonts.google.com/specimen/Roboto+Mono)
+## ~~Install [Roboto Mono Font](https://fonts.google.com/specimen/Roboto+Mono)~~
+
+## Install [RobotoMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/RobotoMono.zip)
+
+## Install [CaskaydiaMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaMono.zip)
 
 ## Install [QuickLook](https://github.com/QL-Win/QuickLook/releases/tag/3.7.3) (use `.msi`)
 

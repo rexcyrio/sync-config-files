@@ -22,7 +22,10 @@
     ],
     "profiles": {
         "defaults": {
-            "bellStyle": "none"
+            "bellStyle": "none",
+            "font": {
+                "face": "CaskaydiaMono Nerd Font Mono"
+            }
         },
         "list": [
             {
