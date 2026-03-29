@@ -442,6 +442,21 @@ const windowsTerminalConfig: Config[] = [
   },
 ];
 
+const neoVimConfig: Config[] = [
+  {
+    type: Resource.file,
+    pathComponents: [
+      "C:",
+      "Users",
+      "__USERNAME__",
+      "AppData",
+      "Local",
+      "nvim",
+      "init.vim",
+    ],
+  },
+];
+
 const homeConfigLinux: Config[] = [
   {
     type: Resource.file,
@@ -516,6 +531,7 @@ async function doCopy(copyDirection: CopyDirection) {
       ...everythingConfig,
       ...shareXConfig,
       ...windowsTerminalConfig,
+      ...neoVimConfig,
       ...intelliJExtensions,
       ...vscodeExtensionsWindows,
     ];
