@@ -276,6 +276,20 @@ const notepadPlusPlusConfig: Config[] = [
 const homeConfig: Config[] = [
   {
     type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", ".config", "starship.toml"],
+  },
+  {
+    type: Resource.file,
+    pathComponents: [
+      "C:",
+      "Users",
+      "__USERNAME__",
+      ".config",
+      "no-nerd-font.toml",
+    ],
+  },
+  {
+    type: Resource.file,
     pathComponents: ["C:", "Users", "__USERNAME__", ".gitconfig"],
   },
   {

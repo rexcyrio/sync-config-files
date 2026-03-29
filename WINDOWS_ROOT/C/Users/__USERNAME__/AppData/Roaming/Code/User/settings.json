@@ -29,7 +29,7 @@
     },
     "telemetry.telemetryLevel": "off",
     "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
-    "terminal.integrated.fontFamily": "RobotoMono Nerd Font Mono",
+    "terminal.integrated.fontFamily": "Roboto Mono",
     "material-icon-theme.saturation": 0.8,
     "material-icon-theme.opacity": 0.8,
     "material-icon-theme.activeIconPack": "react_redux",
