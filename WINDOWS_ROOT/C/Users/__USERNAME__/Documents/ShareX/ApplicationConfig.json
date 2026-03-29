@@ -153,10 +153,10 @@
           ],
           "SelectedStickerPack": 0,
           "RegionCornerRadius": 0,
-          "BorderColor": "Black",
+          "BorderColor": "Red",
           "BorderSize": 4,
           "BorderStyle": "Solid",
-          "FillColor": "Black",
+          "FillColor": "0, 0, 0, 0",
           "DrawingCornerRadius": 3,
           "Shadow": false,
           "ShadowColor": "125, 0, 0, 0",
@@ -208,12 +208,15 @@
           "BlurRadius": 35,
           "PixelateSize": 15,
           "HighlightColor": "Yellow",
+          "SpotlightDim": 30,
+          "SpotlightBlur": 10,
+          "SpotlightEllipse": false,
           "CutOutEffectType": "None",
           "CutOutEffectSize": 10,
           "CutOutBackgroundColor": "Transparent"
         },
         "LastRegionTool": "RegionRectangle",
-        "LastAnnotationTool": "ToolSelect",
+        "LastAnnotationTool": "DrawingRectangle",
         "LastEditorTool": "DrawingSmartEraser",
         "ImageEditorStartMode": "AutoSize",
         "ImageEditorWindowState": {
@@ -393,6 +396,7 @@
         "Output": "Html",
         "SkipHiddenFolders": true,
         "SkipHiddenFiles": true,
+        "SkipFiles": false,
         "MaxDepthLevel": 0,
         "ShowSizeInfo": true,
         "AddFooter": true,
@@ -478,6 +482,22 @@
         "WindowTitle": null,
         "AutoCloseWindow": false,
         "ExcludeTaskbarArea": false
+      },
+      "AIOptions": {
+        "Provider": "OpenAI",
+        "OpenAIAPIKey": null,
+        "OpenAIModel": "gpt-5-mini",
+        "OpenAICustomURL": null,
+        "OpenAIReasoningEffort": "minimal",
+        "OpenAIVerbosity": "medium",
+        "GeminiAPIKey": null,
+        "GeminiModel": "gemini-1.5-flash-latest",
+        "OpenRouterAPIKey": null,
+        "OpenRouterModel": "google/gemini-flash-1.5",
+        "Input": "What is in this image?",
+        "AutoStartRegion": true,
+        "AutoStartAnalyze": true,
+        "AutoCopyResult": false
       }
     },
     "UseDefaultAdvancedSettings": true,
@@ -858,6 +878,7 @@
     },
     "ThumbnailSize": "150, 150",
     "MaxItemCount": 250,
+    "AutoLoadMoreItems": true,
     "FilterMissingFiles": false,
     "ImageOnly": true,
     "RememberSearchText": false,
@@ -884,7 +905,7 @@
   "AutoCaptureRepeatTime": 60.0,
   "AutoCaptureMinimizeToTray": true,
   "AutoCaptureWaitUpload": true,
-  "ScreenRecordRegion": "0, 177, 1057, 571",
+  "ScreenRecordRegion": "590, 286, 738, 520",
   "ActionsToolbarList": [
     "RectangleRegion",
     "PrintScreen",
@@ -894,10 +915,13 @@
     "ClipboardUploadWithContentViewer"
   ],
   "ActionsToolbarRunAtStartup": false,
-  "ActionsToolbarPosition": "1343, 990",
+  "ActionsToolbarPosition": "1343, 980",
   "ActionsToolbarLockPosition": false,
   "ActionsToolbarStayTopMost": true,
-  "RecentColors": [],
+  "RecentColors": [
+    "0, 0, 0, 0",
+    "Red"
+  ],
   "BinaryUnits": false,
   "ShowMostRecentTaskFirst": false,
   "WorkflowsOnlyShowEdited": false,
@@ -918,9 +942,9 @@
   "PNGStripColorSpaceInformation": false,
   "DisableUpload": true,
   "URLEncodeIgnoreEmoji": true,
-  "ShowUploadWarning": true,
   "ShowMultiUploadWarning": true,
   "ShowLargeFileSizeWarning": 100,
+  "UseMachineSpecificUploadersConfig": false,
   "CustomUploadersConfigPath": null,
   "CustomHotkeysConfigPath": null,
   "CustomScreenshotsPath2": null,
@@ -929,5 +953,5 @@
   "DropAlignment": "BottomRight",
   "DropOpacity": 100,
   "DropHoverOpacity": 255,
-  "ApplicationVersion": "18.0.1"
+  "ApplicationVersion": "19.0.2"
 }
