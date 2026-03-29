@@ -1,1 +1,1 @@
-explorer.exe 'C:\Users\Stefan Lee\AppData\Local\Temp\WinGet'
+explorer.exe "$HOME\AppData\Local\Temp\WinGet"

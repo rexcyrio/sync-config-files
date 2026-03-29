@@ -1,7 +1,7 @@
 try {
     Write-Output 'Starting IntelliJ cleanup...' 
 
-    Push-Location 'C:\Users\Stefan Lee\AppData\Roaming\JetBrains\IntelliJIdea2025.3'
+    Push-Location "$HOME\AppData\Roaming\JetBrains\IntelliJIdea2025.3"
 
     Remove-Item ./tasks/*     -Recurse -ErrorAction SilentlyContinue | Out-Host
     Remove-Item ./workspace/* -Recurse -ErrorAction SilentlyContinue | Out-Host
