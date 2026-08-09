@@ -61,7 +61,7 @@ const vscodeConfig: Config[] = [
 ];
 
 // might need to change this as needed
-const intelliJIdentifier = "IntelliJIdea2025.3";
+const intelliJIdentifier = "IntelliJIdea2026.1";
 
 const intelliJConfig: Config[] = [
   {
