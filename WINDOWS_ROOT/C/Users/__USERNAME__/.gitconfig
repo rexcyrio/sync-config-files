@@ -2,13 +2,15 @@
     name = rexcyrio
     email = stefancyrio@gmail.com
 [core]
+    # disable all automatic CRLF / LF conversions
     autocrlf = false
+    # warn when EOL conversions modify the file irreversibly
     safecrlf = true
     ignoreCase = false
     editor = vim
     eol = lf
 [alias]
-    history = log --pretty=format:\"%C(auto)%h %ad | %s%d [%an]%C(reset)\" --graph --date=short
+    graph = log --pretty=format:\"%C(auto)%h %ad | %s%d [%an]%C(reset)\" --graph --date=short
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
