@@ -1,1 +1,1 @@
-$Env:PATH.split(';')
+$env:Path.split(';')
