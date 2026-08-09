@@ -7,6 +7,7 @@
     "editor.renderLineHighlight": "all",
     "editor.renderWhitespace": "none",
     "editor.unicodeHighlight.nonBasicASCII": true,
+    // "editor.unicodeHighlight.nonBasicASCII": false,
     "editor.guides.bracketPairs": true,
     "editor.linkedEditing": true,
     "editor.stickyScroll.enabled": false,
@@ -115,7 +116,7 @@
     "java.autobuild.enabled": false,
     "emmet.showExpandedAbbreviation": "never",
     "python.REPL.enableREPLSmartSend": false,
-    "python.analysis.typeCheckingMode": "standard",
+    "python.analysis.typeCheckingMode": "strict",
     "Prettier-SQL.keywordCase": "upper",
     "sqltools.autoOpenSessionFiles": false,
     "terminal.integrated.commandsToSkipShell": [
@@ -156,4 +157,9 @@
     "remote.SSH.showLoginTerminal": false,
     "remote.SSH.enableRemoteCommand": false,
     // https://www.comp.nus.edu.sg/~cs3210/student-guide/soc-gpus/
+    "rainbow_csv.virtual_alignment_mode": "manual",
+    "rainbow_csv.csv_lint_detect_trailing_spaces": true,
+    "[csv]": {
+        "editor.inlayHints.maximumLength": 0
+    }
 }
