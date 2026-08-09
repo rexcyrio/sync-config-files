@@ -19,3 +19,15 @@ Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.Full
 
 # enable starship
 Invoke-Expression (&starship init powershell)
+
+# remove powershell aliases
+$aliasesToRemove = @('curl', 'wget', 'r')
+
+foreach ($name in $aliasesToRemove) {
+    if (Get-Alias $name -ErrorAction SilentlyContinue) {
+        Remove-Item alias:$name -Force
+    }
+}
+
+# add ll
+function ll { Get-ChildItem -Force $args }
