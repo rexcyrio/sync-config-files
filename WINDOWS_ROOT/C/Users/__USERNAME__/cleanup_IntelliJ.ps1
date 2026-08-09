@@ -1,28 +1,27 @@
-try {
-    Write-Output 'Starting IntelliJ cleanup...' 
+$VERSION_IDENTIFIER = 'IntelliJIdea2026.1'
 
-    Push-Location "$HOME\AppData\Roaming\JetBrains\IntelliJIdea2025.3"
+$folders = @(
+    "$HOME\AppData\Roaming\JetBrains\$VERSION_IDENTIFIER\tasks\*",
+    "$HOME\AppData\Roaming\JetBrains\$VERSION_IDENTIFIER\workspace\*"
+)
 
-    Remove-Item ./tasks/*     -Recurse -ErrorAction SilentlyContinue | Out-Host
-    Remove-Item ./workspace/* -Recurse -ErrorAction SilentlyContinue | Out-Host
+$files = @(
+    "$HOME\AppData\Roaming\JetBrains\$VERSION_IDENTIFIER\options\window.state.xml",
+    "$HOME\AppData\Roaming\JetBrains\$VERSION_IDENTIFIER\options\window.layouts.xml",
+    "$HOME\AppData\Roaming\JetBrains\$VERSION_IDENTIFIER\options\recentProjects.xml",
+    "$HOME\AppData\Roaming\JetBrains\$VERSION_IDENTIFIER\options\inline.factors.completion.xml",
+    "$HOME\AppData\Roaming\JetBrains\$VERSION_IDENTIFIER\options\features.usage.statistics.xml",
+    "$HOME\AppData\Roaming\JetBrains\$VERSION_IDENTIFIER\options\dailyLocalStatistics.xml",
+    "$HOME\AppData\Roaming\JetBrains\$VERSION_IDENTIFIER\options\contributorSummary.xml",
+    "$HOME\AppData\Roaming\JetBrains\$VERSION_IDENTIFIER\options\actionSummary.xml"
+)
 
-    $files = @(
-        './options/window.state.xml',
-        './options/window.layouts.xml',
-        './options/recentProjects.xml',
-        './options/inline.factors.completion.xml',
-        './options/features.usage.statistics.xml',
-        './options/dailyLocalStatistics.xml',
-        './options/contributorSummary.xml',
-        './options/actionSummary.xml'
-    )
-
-    foreach ($file in $files) {
-        Remove-Item $file -ErrorAction SilentlyContinue | Out-Host
+foreach ($file in $files) {
+    if (Test-Path -Path $file) {
+        Remove-Item -Path $file -Verbose
     }
-
-    Write-Host 'Done'
 }
-finally {
-    Pop-Location
+
+foreach ($folder in $folders) {
+    Remove-Item -Path $folder -Recurse -Verbose
 }
