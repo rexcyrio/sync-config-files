@@ -56,5 +56,14 @@
         "key": "alt+up",
         "command": "-extension.coq.stepBackward",
         "when": "editorTextFocus && editorLangId == 'coq'"
+    },
+    {
+        "key": "ctrl+alt+\\",
+        "command": "-jupyter.selectCellContents",
+        "when": "editorTextFocus && jupyter.hascodecells && !jupyter.webExtension && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+alt+\\",
+        "command": "editor.emmet.action.matchTag"
     }
 ]
