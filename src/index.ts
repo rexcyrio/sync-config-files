@@ -302,7 +302,27 @@ const homeConfig: Config[] = [
   },
   {
     type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", "cleanup_ClaudeCode.ps1"],
+  },
+  {
+    type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", "cleanup_ClaudeCode.sh"],
+  },
+  {
+    type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", "cleanup_ClaudeCodeInTempFolder.ps1"],
+  },
+  {
+    type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", "cleanup_DBeaver.ps1"],
+  },
+  {
+    type: Resource.file,
     pathComponents: ["C:", "Users", "__USERNAME__", "cleanup_IntelliJ.ps1"],
+  },
+  {
+    type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", "cleanup_VSCode.ps1"],
   },
   {
     type: Resource.file,
@@ -311,6 +331,14 @@ const homeConfig: Config[] = [
   {
     type: Resource.file,
     pathComponents: ["C:", "Users", "__USERNAME__", "echo_PATH.ps1"],
+  },
+  {
+    type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", "explorer_ClaudeCode.ps1"],
+  },
+  {
+    type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", "explorer_DBeaver.ps1"],
   },
   {
     type: Resource.file,
