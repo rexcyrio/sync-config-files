@@ -111,6 +111,14 @@
   },
   "BoxShare": true,
   "BoxShareAccessLevel": "Open",
+  "MegaEmail": "",
+  "MegaPassword": "",
+  "MegaSessionID": "",
+  "MegaMasterKey": "",
+  "MegaSelectedFolder": {
+    "ID": "",
+    "Name": ""
+  },
   "LocalhostrEmail": "",
   "LocalhostrPassword": "",
   "LocalhostrDirectURL": true,
@@ -141,6 +149,8 @@
     "StorageClass": "STANDARD",
     "SetPublicACL": true,
     "SignedPayload": false,
+    "UseMultipartUpload": false,
+    "MultipartConcurrency": 4,
     "RemoveExtensionImage": false,
     "RemoveExtensionVideo": false,
     "RemoveExtensionText": false
@@ -168,6 +178,10 @@
   "LambdaSettings": {
     "UserAPIKey": "",
     "UploadURL": "https://lbda.net/"
+  },
+  "ImgFishSettings": {
+    "APIKey": "",
+    "FileIDLength": 8
   },
   "LithiioSettings": {
     "UserAPIKey": ""
@@ -232,6 +246,10 @@
   "GoogleCloudStorageRemoveExtensionVideo": false,
   "GoogleCloudStorageRemoveExtensionText": false,
   "GoogleCloudStorageSetPublicACL": true,
+  "ImmichURL": "",
+  "ImmichAPIKey": "",
+  "ImmichAutoCreateShareableLink": true,
+  "ImmichShowMetadata": false,
   "BitlyOAuth2Info": null,
   "BitlyDomain": "",
   "YourlsAPIURL": "http://yoursite.com/yourls-api.php",
@@ -260,5 +278,5 @@
   "CustomFileUploaderSelected": 0,
   "CustomURLShortenerSelected": 0,
   "CustomURLSharingServiceSelected": 0,
-  "ApplicationVersion": "21.0.0"
+  "ApplicationVersion": "22.4.0"
 }

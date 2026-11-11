@@ -33,6 +33,33 @@
       "ToastWindowLeftClickAction": "OpenUrl",
       "ToastWindowRightClickAction": "CloseNotification",
       "ToastWindowMiddleClickAction": "AnnotateImage",
+      "ToastWindowButtonSize": 40,
+      "ToastWindowButtons": [
+        {
+          "Action": "CopyImageToClipboard",
+          "Label": null,
+          "Icon": null,
+          "DismissNotification": true
+        },
+        {
+          "Action": "AnnotateImage",
+          "Label": null,
+          "Icon": null,
+          "DismissNotification": true
+        },
+        {
+          "Action": "PinToScreen",
+          "Label": null,
+          "Icon": null,
+          "DismissNotification": true
+        },
+        {
+          "Action": "Upload",
+          "Label": null,
+          "Icon": null,
+          "DismissNotification": true
+        }
+      ],
       "ToastWindowAutoHide": true,
       "DisableNotificationsOnFullscreen": false,
       "UseCustomCaptureSound": false,
@@ -48,8 +75,15 @@
     "ImageSettings": {
       "ImageFormat": "PNG",
       "ImagePNGBitDepth": "Default",
+      "ImageBMPBitDepth": "Bit24",
+      "ImagePNGCompressionLevel": 1,
+      "ImagePNGFilter": "AllFilters",
       "ImageJPEGQuality": 90,
+      "ImageJPEGSubsampling": "Downsample420",
       "ImageGIFQuality": "Default",
+      "ImageWebPQuality": 90,
+      "ImageWebPLossless": true,
+      "ImageWebPCompressionEffort": 100,
       "ImageAutoUseJPEG": true,
       "ImageAutoUseJPEGSize": 2048,
       "ImageAutoJPEGQuality": false,
@@ -85,178 +119,33 @@
       "CaptureClientArea": false,
       "CaptureAutoHideTaskbar": false,
       "CaptureAutoHideDesktopIcons": false,
+      "HDRScreenshotColorCorrection": false,
       "CaptureCustomRegion": "0, 0, 0, 0",
       "CaptureCustomWindow": "",
-      "SurfaceOptions": {
-        "QuickCrop": false,
-        "MinimumSize": 5,
+      "RegionCaptureOptions": {
+        "QuickCapture": false,
+        "MultiRegionMode": false,
+        "DetectWindows": true,
+        "DetectControls": true,
+        "ActiveMonitorMode": false,
+        "BackgroundDimStrength": 20,
+        "DimAllExceptSelection": false,
+        "ToolbarItems": [],
+        "CompactToolbar": false,
         "RegionCaptureActionRightClick": "RemoveShapeCancelCapture",
         "RegionCaptureActionMiddleClick": "SwapToolType",
         "RegionCaptureActionX1Click": "CaptureFullscreen",
         "RegionCaptureActionX2Click": "CaptureActiveMonitor",
-        "DetectWindows": true,
-        "DetectControls": true,
-        "UseDimming": true,
-        "BackgroundDimStrength": 10,
+        "ShowInfo": true,
         "UseCustomInfoText": false,
         "CustomInfoText": "X: $x, Y: $y$nR: $r, G: $g, B: $b$nHex: $hex",
-        "SnapSizes": [
-          {
-            "Width": 426,
-            "Height": 240
-          },
-          {
-            "Width": 640,
-            "Height": 360
-          },
-          {
-            "Width": 854,
-            "Height": 480
-          },
-          {
-            "Width": 1280,
-            "Height": 720
-          },
-          {
-            "Width": 1920,
-            "Height": 1080
-          }
-        ],
-        "ShowInfo": true,
         "ShowMagnifier": true,
         "UseSquareMagnifier": false,
-        "MagnifierPixelCount": 35,
-        "MagnifierPixelSize": 10,
-        "ShowCenterCrosshair": false,
-        "ShowCrosshair": false,
-        "UseLightResizeNodes": false,
-        "EnableAnimations": true,
-        "IsFixedSize": false,
-        "FixedSize": "250, 250",
-        "ShowFPS": false,
-        "FPSLimit": 100,
-        "MenuIconSize": 20,
-        "MenuLocked": false,
-        "RememberMenuState": false,
-        "MenuCollapsed": false,
-        "MenuPosition": "0, 0",
-        "InputDelay": 500,
-        "SwitchToDrawingToolAfterSelection": false,
-        "SwitchToSelectionToolAfterDrawing": false,
-        "ActiveMonitorMode": false,
-        "AnnotationOptions": {
-          "ImageInterpolationMode": "NearestNeighbor",
-          "StickerPacks": [
-            {
-              "FolderPath": "Stickers\\BlobEmoji",
-              "Name": "Blob Emoji"
-            }
-          ],
-          "SelectedStickerPack": 0,
-          "RegionCornerRadius": 0,
-          "BorderColor": "Red",
-          "BorderSize": 4,
-          "BorderStyle": "Solid",
-          "FillColor": "0, 0, 0, 0",
-          "DrawingCornerRadius": 3,
-          "Shadow": false,
-          "ShadowColor": "125, 0, 0, 0",
-          "ShadowOffset": "0, 1",
-          "FreehandSmoothing": 0,
-          "FreehandCurveInterpolation": true,
-          "LineCenterPointCount": 1,
-          "ArrowHeadDirection": "End",
-          "TextOutlineOptions": {
-            "Font": "Arial",
-            "Size": 25,
-            "Color": "White",
-            "Bold": true,
-            "Italic": false,
-            "Underline": false,
-            "AlignmentHorizontal": "Center",
-            "AlignmentVertical": "Center",
-            "Gradient": false,
-            "Color2": "ButtonFace",
-            "GradientMode": "Vertical",
-            "EnterKeyNewLine": false
-          },
-          "TextOutlineBorderColor": "242, 60, 60",
-          "TextOutlineBorderSize": 5,
-          "TextOptions": {
-            "Font": "Arial",
-            "Size": 18,
-            "Color": "Black",
-            "Bold": false,
-            "Italic": false,
-            "Underline": false,
-            "AlignmentHorizontal": "Center",
-            "AlignmentVertical": "Center",
-            "Gradient": false,
-            "Color2": "ButtonFace",
-            "GradientMode": "Vertical",
-            "EnterKeyNewLine": false
-          },
-          "TextBorderColor": "White",
-          "TextBorderSize": 0,
-          "TextFillColor": "White",
-          "LastImageFilePath": null,
-          "StepBorderColor": "White",
-          "StepBorderSize": 0,
-          "StepFillColor": "242, 60, 60",
-          "StepFontSize": 18,
-          "StepType": "Numbers",
-          "MagnifyStrength": 200,
-          "StickerSize": 64,
-          "LastStickerPath": null,
-          "BlurRadius": 35,
-          "PixelateSize": 15,
-          "HighlightColor": "Yellow",
-          "SpotlightDim": 30,
-          "SpotlightBlur": 10,
-          "SpotlightEllipse": false,
-          "CutOutEffectType": "None",
-          "CutOutEffectSize": 10,
-          "CutOutBackgroundColor": "Transparent"
-        },
-        "LastRegionTool": "RegionRectangle",
-        "LastAnnotationTool": "DrawingRectangle",
-        "LastEditorTool": "DrawingSmartEraser",
-        "ImageEditorStartMode": "AutoSize",
-        "ImageEditorWindowState": {
-          "Location": "0, 0",
-          "Size": "0, 0",
-          "IsMaximized": false
-        },
-        "ZoomToFitOnOpen": false,
-        "EditorAutoCopyImage": false,
-        "AutoCloseEditorOnTask": false,
-        "ShowEditorPanTip": true,
-        "ImageEditorResizeInterpolationMode": "Bicubic",
-        "EditorNewImageSize": "800, 600",
-        "EditorNewImageTransparent": false,
-        "EditorNewImageBackgroundColor": "White",
-        "EditorCanvasColor": "White",
-        "ImageEffectPresets": [
-          {
-            "Name": "",
-            "Effects": []
-          },
-          {
-            "Name": "",
-            "Effects": [
-              {
-                "$type": "ShareX.ImageEffectsLib.Inverse, ShareX.ImageEffectsLib",
-                "Enabled": true,
-                "Name": null
-              }
-            ]
-          }
-        ],
-        "SelectedImageEffectPreset": 1,
-        "ColorPickerOptions": {
-          "RecentColorsSelected": false
-        },
-        "ScreenColorPickerInfoText": ""
+        "MagnifierSize": 150,
+        "MagnifierPixelCount": 9,
+        "ShowCenterCrosshair": true,
+        "ShowScreenCrosshair": false,
+        "ToolbarPosition": "0, 0"
       },
       "FFmpegOptions": {
         "OverrideCLIPath": false,
@@ -290,16 +179,37 @@
         "Vorbis_QScale": 3,
         "MP3_QScale": 4
       },
+      "ScreenRecordUseNative": true,
+      "ScreenRecordShowBar": true,
+      "ScreenRecordSystemAudio": true,
+      "ScreenRecordSystemAudioDeviceId": "",
+      "ScreenRecordSystemAudioGain": 1.0,
+      "ScreenRecordMicrophone": false,
+      "ScreenRecordMicrophoneDeviceId": "",
+      "ScreenRecordMicrophoneGain": 1.0,
+      "ScreenRecordCamera": false,
+      "ScreenRecordCameraDeviceId": "",
+      "ScreenRecordCameraResolution": "Size1280x720",
+      "ScreenRecordCameraFPS": 30,
+      "ScreenRecordCameraPosition": "BottomRight",
+      "ScreenRecordCameraShape": "Rectangle",
+      "ScreenRecordCameraWidthPercent": 20,
+      "ScreenRecordCameraMargin": 20,
+      "ScreenRecordRequireHardwareEncoder": true,
+      "ScreenRecordVideoBitrate": 10000,
+      "ScreenRecordHDRToneMapping": false,
       "ScreenRecordFPS": 30,
       "GIFFPS": 15,
       "ScreenRecordShowCursor": true,
-      "ScreenRecordAutoStart": true,
+      "ScreenRecordMouseHighlighter": false,
+      "ScreenRecordShowTimer": true,
+      "ScreenRecordShowButtonLabels": false,
+      "ScreenRecordStartDelayEnabled": false,
       "ScreenRecordStartDelay": 0.0,
       "ScreenRecordFixedDuration": false,
       "ScreenRecordDuration": 3.0,
       "ScreenRecordTwoPassEncoding": false,
       "ScreenRecordAskConfirmationOnAbort": false,
-      "ScreenRecordTransparentRegion": false,
       "ScrollingCaptureOptions": {
         "StartDelay": 300,
         "AutoScrollTop": false,
@@ -319,27 +229,27 @@
         "ServiceLinks": [
           {
             "Name": "Google Translate",
-            "URL": "https://translate.google.com/?sl=auto&tl=en&text={0}&op=translate"
+            "Url": "https://translate.google.com/?sl=auto&tl=en&text={0}&op=translate"
           },
           {
             "Name": "Google Search",
-            "URL": "https://www.google.com/search?q={0}"
+            "Url": "https://www.google.com/search?q={0}"
           },
           {
             "Name": "Google Images",
-            "URL": "https://www.google.com/search?q={0}&tbm=isch"
+            "Url": "https://www.google.com/search?q={0}&tbm=isch"
           },
           {
             "Name": "Bing",
-            "URL": "https://www.bing.com/search?q={0}"
+            "Url": "https://www.bing.com/search?q={0}"
           },
           {
             "Name": "DuckDuckGo",
-            "URL": "https://duckduckgo.com/?q={0}"
+            "Url": "https://duckduckgo.com/?q={0}"
           },
           {
             "Name": "DeepL",
-            "URL": "https://www.deepl.com/translator#auto/en/{0}"
+            "Url": "https://www.deepl.com/translator#auto/en/{0}"
           }
         ],
         "CloseWindowAfterOpeningServiceLink": false,
@@ -375,9 +285,15 @@
     "ExternalPrograms": [],
     "UseDefaultToolsSettings": true,
     "ToolsSettings": {
-      "ScreenColorPickerFormat": "$hex",
-      "ScreenColorPickerFormatCtrl": "$r255, $g255, $b255",
-      "ScreenColorPickerInfoText": "RGB: $r255, $g255, $b255$nHex: $hex$nX: $x Y: $y",
+      "ColorPickerOptions": {
+        "RecentColorsSelected": true
+      },
+      "ScreenColorPickerOptions": {
+        "Format": "$HEX",
+        "FormatCtrl": "$r255, $g255, $b255",
+        "InfoText": "#$HEX",
+        "ShowMagnifier": true
+      },
       "PinToScreenOptions": {
         "InitialScale": 100,
         "ScaleStep": 10,
@@ -395,6 +311,27 @@
         "BorderColor": "CornflowerBlue",
         "MinimizeSize": "100, 100"
       },
+      "MouseHighlighterOptions": {
+        "AutoActivate": false,
+        "Mode": "Ripple",
+        "HighlightPrimaryClicks": true,
+        "PrimaryColor": "166, 54, 169, 225",
+        "ShowPrimaryReleaseCrosshairs": false,
+        "HighlightSecondaryClicks": true,
+        "SecondaryColor": "166, 89, 184, 106",
+        "ShowSecondaryReleaseCrosshairs": false,
+        "HighlightMiddleClicks": true,
+        "MiddleColor": "166, 242, 193, 78",
+        "ShowMiddleReleaseCrosshairs": false,
+        "AlwaysColor": "Transparent",
+        "Radius": 20,
+        "FadeDelay": 500,
+        "FadeDuration": 250,
+        "RippleSize": 60,
+        "RippleIntensity": 0.7,
+        "RippleDuration": 500,
+        "FollowCursorWhileHeld": true
+      },
       "IndexerSettings": {
         "Output": "Html",
         "SkipHiddenFolders": true,
@@ -411,33 +348,6 @@
         "CustomCSSFilePath": "",
         "UseAttribute": true,
         "CreateParseableJson": true
-      },
-      "ImageBeautifierOptions": {
-        "Margin": 80,
-        "Padding": 40,
-        "SmartPadding": true,
-        "RoundedCorner": 20,
-        "ShadowRadius": 30,
-        "ShadowOpacity": 80,
-        "ShadowDistance": 10,
-        "ShadowAngle": 180,
-        "ShadowColor": "Black",
-        "BackgroundType": "Gradient",
-        "BackgroundGradient": {
-          "Type": "ForwardDiagonal",
-          "Colors": [
-            {
-              "Color": "255, 81, 47",
-              "Location": 0.0
-            },
-            {
-              "Color": "221, 36, 118",
-              "Location": 100.0
-            }
-          ]
-        },
-        "BackgroundColor": "34, 34, 34",
-        "BackgroundImageFilePath": ""
       },
       "ImageCombinerOptions": {
         "Orientation": "Vertical",
@@ -504,10 +414,6 @@
       },
       "ImageEditorOptions": {
         "LastUsedAnnotationTool": "Rectangle",
-        "Theme": "Dark",
-        "UseSystemTheme": true,
-        "AccentColorHex": "#3E83F2",
-        "UseSystemAccentColor": true,
         "RememberWindowState": true,
         "IsWindowMaximized": true,
         "WindowWidth": 1280.0,
@@ -519,7 +425,185 @@
         "AutoCopyImageToClipboard": false,
         "ShowInsertImageDialog": true,
         "ShowNotifications": true,
-        "ToolbarItems": [],
+        "AutoExpandCanvas": true,
+        "CanvasFillColorHex": "#00000000",
+        "ToolbarItems": [
+          {
+            "Id": "File",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "",
+            "SecondaryHotkey": ""
+          },
+          {
+            "Id": "Select",
+            "BeginGroup": true,
+            "IsVisible": true,
+            "Hotkey": "V",
+            "SecondaryHotkey": ""
+          },
+          {
+            "Id": "Rectangle",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "R",
+            "SecondaryHotkey": "NumPad1"
+          },
+          {
+            "Id": "Ellipse",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "E",
+            "SecondaryHotkey": "NumPad2"
+          },
+          {
+            "Id": "Line",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "L",
+            "SecondaryHotkey": "NumPad4"
+          },
+          {
+            "Id": "Arrow",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "A",
+            "SecondaryHotkey": "NumPad5"
+          },
+          {
+            "Id": "Freehand",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "F",
+            "SecondaryHotkey": "NumPad3"
+          },
+          {
+            "Id": "Text",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "T",
+            "SecondaryHotkey": "NumPad6"
+          },
+          {
+            "Id": "SpeechBalloon",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "O",
+            "SecondaryHotkey": ""
+          },
+          {
+            "Id": "Step",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "N",
+            "SecondaryHotkey": "NumPad7"
+          },
+          {
+            "Id": "Image",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "I",
+            "SecondaryHotkey": ""
+          },
+          {
+            "Id": "Clone",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "D",
+            "SecondaryHotkey": ""
+          },
+          {
+            "Id": "Emoji",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "J",
+            "SecondaryHotkey": ""
+          },
+          {
+            "Id": "Cursor",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "K",
+            "SecondaryHotkey": ""
+          },
+          {
+            "Id": "Highlight",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "H",
+            "SecondaryHotkey": ""
+          },
+          {
+            "Id": "SmartEraser",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "W",
+            "SecondaryHotkey": ""
+          },
+          {
+            "Id": "Blur",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "B",
+            "SecondaryHotkey": "NumPad8"
+          },
+          {
+            "Id": "Pixelate",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "P",
+            "SecondaryHotkey": "NumPad9"
+          },
+          {
+            "Id": "Magnify",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "M",
+            "SecondaryHotkey": ""
+          },
+          {
+            "Id": "Spotlight",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "S",
+            "SecondaryHotkey": ""
+          },
+          {
+            "Id": "Crop",
+            "BeginGroup": true,
+            "IsVisible": true,
+            "Hotkey": "C",
+            "SecondaryHotkey": ""
+          },
+          {
+            "Id": "CutOut",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "U",
+            "SecondaryHotkey": ""
+          },
+          {
+            "Id": "CanvasSize",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "X",
+            "SecondaryHotkey": ""
+          },
+          {
+            "Id": "Background",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "",
+            "SecondaryHotkey": ""
+          },
+          {
+            "Id": "ImageEffects",
+            "BeginGroup": false,
+            "IsVisible": true,
+            "Hotkey": "",
+            "SecondaryHotkey": ""
+          }
+        ],
         "BorderColorHex": "#FFF23C3C",
         "FillColorHex": "#00FFFFFF",
         "Thickness": 4,
@@ -532,6 +616,8 @@
         "ShadowOffsetY": 3.0,
         "BorderStyle": "Solid",
         "ArrowStyle": "Classic",
+        "ArrowRoundedCorners": true,
+        "FreehandArrow": false,
         "CursorType": "Default",
         "TextBorderColorHex": "#FFF23C3C",
         "TextTextColorHex": "#FFFAFAFA",
@@ -595,9 +681,7 @@
       "BackgroundRemoverOptions": {
         "SelectedModelFileName": "",
         "SelectedDevice": "Auto"
-      },
-      "UseLegacyImageEditor": false,
-      "ShowImageEditorSelector": true
+      }
     },
     "UseDefaultAdvancedSettings": true,
     "AdvancedSettings": {
@@ -668,6 +752,8 @@
     "WatchFolderList": []
   },
   "FirstTimeRunDate": "2021-11-16T15:16:27.5550685Z",
+  "ShowStartScreen": false,
+  "ShowIconPackPrompt": false,
   "FileUploadDefaultDirectory": "",
   "NameParserAutoIncrementNumber": 0,
   "QuickTaskPresets": [
@@ -718,8 +804,7 @@
     }
   ],
   "FirstTimeMinimizeToTray": false,
-  "TaskListViewColumnWidths": [],
-  "PreviewSplitterDistance": 335,
+  "ScreenshotDelayJustOnce": false,
   "Language": "Automatic",
   "ShowTray": true,
   "SilentRun": false,
@@ -727,226 +812,48 @@
   "TaskbarProgressEnabled": true,
   "UseWhiteShareXIcon": false,
   "RememberMainFormPosition": false,
-  "MainFormPosition": "206, 150",
+  "MainFormPosition": "388, 66",
   "RememberMainFormSize": false,
-  "MainFormSize": "895, 590",
+  "MainFormSize": "900, 702",
   "TrayLeftClickAction": "RectangleRegion",
   "TrayLeftDoubleClickAction": "OpenMainWindow",
   "TrayMiddleClickAction": "ClipboardUploadWithContentViewer",
   "AutoCheckUpdate": true,
   "UpdateChannel": "Release",
   "CheckPreReleaseUpdates": false,
-  "Themes": [
-    {
-      "Name": "Dark",
-      "BackgroundColor": "39, 39, 39",
-      "LightBackgroundColor": "46, 46, 46",
-      "DarkBackgroundColor": "34, 34, 34",
-      "TextColor": "231, 233, 234",
-      "BorderColor": "31, 31, 31",
-      "CheckerColor": "46, 46, 46",
-      "CheckerColor2": "39, 39, 39",
-      "CheckerSize": 15,
-      "LinkColor": "166, 212, 255",
-      "MenuHighlightColor": "46, 46, 46",
-      "MenuHighlightBorderColor": "63, 63, 63",
-      "MenuBorderColor": "63, 63, 63",
-      "MenuCheckBackgroundColor": "51, 51, 51",
-      "MenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuOpacity": 100,
-      "SeparatorLightColor": "44, 44, 44",
-      "SeparatorDarkColor": "31, 31, 31"
-    },
-    {
-      "Name": "Light",
-      "BackgroundColor": "242, 242, 242",
-      "LightBackgroundColor": "247, 247, 247",
-      "DarkBackgroundColor": "235, 235, 235",
-      "TextColor": "69, 69, 69",
-      "BorderColor": "201, 201, 201",
-      "CheckerColor": "247, 247, 247",
-      "CheckerColor2": "235, 235, 235",
-      "CheckerSize": 15,
-      "LinkColor": "166, 212, 255",
-      "MenuHighlightColor": "247, 247, 247",
-      "MenuHighlightBorderColor": "96, 143, 226",
-      "MenuBorderColor": "201, 201, 201",
-      "MenuCheckBackgroundColor": "225, 233, 244",
-      "MenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuOpacity": 100,
-      "SeparatorLightColor": "253, 253, 253",
-      "SeparatorDarkColor": "189, 189, 189"
-    },
-    {
-      "Name": "Night",
-      "BackgroundColor": "42, 47, 56",
-      "LightBackgroundColor": "52, 57, 65",
-      "DarkBackgroundColor": "28, 32, 38",
-      "TextColor": "235, 235, 235",
-      "BorderColor": "28, 32, 38",
-      "CheckerColor": "60, 60, 60",
-      "CheckerColor2": "50, 50, 50",
-      "CheckerSize": 15,
-      "LinkColor": "166, 212, 255",
-      "MenuHighlightColor": "30, 34, 40",
-      "MenuHighlightBorderColor": "116, 129, 152",
-      "MenuBorderColor": "22, 26, 31",
-      "MenuCheckBackgroundColor": "56, 64, 75",
-      "MenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuOpacity": 100,
-      "SeparatorLightColor": "56, 64, 75",
-      "SeparatorDarkColor": "22, 26, 31"
-    },
-    {
-      "Name": "Nord Dark",
-      "BackgroundColor": "46, 52, 64",
-      "LightBackgroundColor": "59, 66, 82",
-      "DarkBackgroundColor": "38, 44, 57",
-      "TextColor": "229, 233, 240",
-      "BorderColor": "30, 38, 54",
-      "CheckerColor": "46, 52, 64",
-      "CheckerColor2": "36, 42, 54",
-      "CheckerSize": 15,
-      "LinkColor": "136, 192, 208",
-      "MenuHighlightColor": "36, 42, 54",
-      "MenuHighlightBorderColor": "24, 30, 42",
-      "MenuBorderColor": "24, 30, 42",
-      "MenuCheckBackgroundColor": "59, 66, 82",
-      "MenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuOpacity": 100,
-      "SeparatorLightColor": "59, 66, 82",
-      "SeparatorDarkColor": "30, 38, 54"
-    },
-    {
-      "Name": "Nord Light",
-      "BackgroundColor": "229, 233, 240",
-      "LightBackgroundColor": "236, 239, 244",
-      "DarkBackgroundColor": "216, 222, 233",
-      "TextColor": "59, 66, 82",
-      "BorderColor": "207, 216, 233",
-      "CheckerColor": "229, 233, 240",
-      "CheckerColor2": "216, 222, 233",
-      "CheckerSize": 15,
-      "LinkColor": "106, 162, 178",
-      "MenuHighlightColor": "236, 239, 244",
-      "MenuHighlightBorderColor": "207, 216, 233",
-      "MenuBorderColor": "216, 222, 233",
-      "MenuCheckBackgroundColor": "229, 233, 240",
-      "MenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuOpacity": 100,
-      "SeparatorLightColor": "236, 239, 244",
-      "SeparatorDarkColor": "207, 216, 233"
-    },
-    {
-      "Name": "Dracula",
-      "BackgroundColor": "40, 42, 54",
-      "LightBackgroundColor": "68, 71, 90",
-      "DarkBackgroundColor": "36, 38, 48",
-      "TextColor": "248, 248, 242",
-      "BorderColor": "33, 35, 43",
-      "CheckerColor": "40, 42, 54",
-      "CheckerColor2": "36, 38, 48",
-      "CheckerSize": 15,
-      "LinkColor": "98, 114, 164",
-      "MenuHighlightColor": "36, 38, 48",
-      "MenuHighlightBorderColor": "255, 121, 198",
-      "MenuBorderColor": "33, 35, 43",
-      "MenuCheckBackgroundColor": "45, 47, 61",
-      "MenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuOpacity": 100,
-      "SeparatorLightColor": "45, 47, 61",
-      "SeparatorDarkColor": "33, 35, 43"
-    }
-  ],
-  "SelectedTheme": 1,
+  "ThemeOptions": {
+    "Theme": "Light",
+    "UseSystemTheme": false,
+    "AccentColorHex": "#09AAFF",
+    "UseSystemAccentColor": true,
+    "IconPack": "Modern",
+    "CompactMode": false,
+    "SidebarSpacing": null,
+    "MenuSpacing": null,
+    "ToolMenuSpacing": null,
+    "SettingsSpacing": null
+  },
   "UseCustomScreenshotsPath": false,
   "CustomScreenshotsPath": "",
   "SaveImageSubFolderPattern": "%y-%mo",
   "SaveImageSubFolderPatternWindow": "",
-  "ShowMenu": true,
+  "AutoCleanupBackupFiles": false,
+  "AutoCleanupLogFiles": false,
+  "CleanupKeepFileCount": 10,
   "TaskViewMode": "ThumbnailView",
+  "ShowColumns": true,
+  "TaskListViewColumnWidths": [],
+  "ImagePreview": "Automatic",
+  "ImagePreviewWidth": 300,
   "ShowThumbnailTitle": true,
   "ThumbnailTitleLocation": "Top",
   "ThumbnailSize": "200, 150",
   "ThumbnailClickAction": "Default",
-  "ShowColumns": true,
-  "ImagePreview": "Automatic",
-  "ImagePreviewLocation": "Side",
-  "AutoCleanupBackupFiles": false,
-  "AutoCleanupLogFiles": false,
-  "CleanupKeepFileCount": 10,
-  "ProxySettings": {
-    "ProxyMethod": "Manual",
-    "Host": null,
-    "Port": 0,
-    "Username": null,
-    "Password": null
-  },
+  "HiddenTools": [],
+  "ClipboardContentFormats": [],
   "UploadLimit": 5,
   "BufferSizePower": 5,
-  "ClipboardContentFormats": [],
   "MaxUploadFailRetry": 1,
-  "UseSecondaryUploaders": false,
-  "SecondaryImageUploaders": [
-    "Imgur",
-    "ImageShack",
-    "Flickr",
-    "Photobucket",
-    "Chevereto",
-    "Vgyme",
-    "CustomImageUploader",
-    "FileUploader"
-  ],
-  "SecondaryTextUploaders": [
-    "Pastebin",
-    "Paste2",
-    "Slexy",
-    "Paste_ee",
-    "Gist",
-    "Upaste",
-    "Hastebin",
-    "OneTimeSecret",
-    "Pastie",
-    "CustomTextUploader",
-    "FileUploader"
-  ],
-  "SecondaryFileUploaders": [
-    "Dropbox",
-    "FTP",
-    "OneDrive",
-    "GoogleDrive",
-    "Puush",
-    "Box",
-    "AmazonS3",
-    "GoogleCloudStorage",
-    "AzureStorage",
-    "BackblazeB2",
-    "OwnCloud",
-    "MediaFire",
-    "Pushbullet",
-    "SendSpace",
-    "Localhostr",
-    "Lambda",
-    "Pomf",
-    "Uguu",
-    "Seafile",
-    "Streamable",
-    "Sul",
-    "Lithiio",
-    "Transfersh",
-    "Plik",
-    "YouTube",
-    "Vault_ooo",
-    "SharedFolder",
-    "Email",
-    "CustomFileUploader"
-  ],
   "HistorySaveTasks": true,
   "HistoryCheckURL": false,
   "RecentTasks": null,
@@ -958,14 +865,15 @@
   "HistorySettings": {
     "RememberWindowState": true,
     "WindowState": {
-      "Location": "211, 78",
-      "Size": "1498, 873",
+      "Location": "271, 117",
+      "Size": "1138, 602",
       "IsMaximized": false
     },
     "SplitterDistance": 550,
     "RememberSearchText": false,
     "SearchText": "",
-    "Favorites": false
+    "Favorites": false,
+    "HistoryListWidth": 720.0
   },
   "ImageHistorySettings": {
     "RememberWindowState": true,
@@ -975,6 +883,7 @@
       "IsMaximized": false
     },
     "ThumbnailSize": "150, 150",
+    "ThumbnailHeaderPosition": "Top",
     "MaxItemCount": 250,
     "AutoLoadMoreItems": true,
     "FilterMissingFiles": false,
@@ -998,6 +907,13 @@
     },
     "ShowPrintDialog": true,
     "DefaultPrinterOverride": ""
+  },
+  "ProxySettings": {
+    "ProxyMethod": "Manual",
+    "Host": null,
+    "Port": 0,
+    "Username": null,
+    "Password": null
   },
   "AutoCaptureRegion": "0, 0, 0, 0",
   "AutoCaptureRepeatTime": 60.0,
@@ -1024,10 +940,8 @@
   "ShowMostRecentTaskFirst": false,
   "WorkflowsOnlyShowEdited": false,
   "TrayAutoExpandCaptureMenu": false,
-  "ShowMainWindowTip": true,
   "BrowserPath": "",
   "SaveSettingsAfterTaskCompleted": false,
-  "AutoSelectLastCompletedTask": false,
   "DevMode": false,
   "DisableHotkeys": false,
   "DisableHotkeysOnFullscreen": false,
@@ -1038,6 +952,7 @@
   "UseAlternativeClipboardGetImage": false,
   "RotateImageByExifOrientationData": true,
   "PNGStripColorSpaceInformation": false,
+  "ShowFileDeleteConfirmation": true,
   "DisableUpload": true,
   "URLEncodeIgnoreEmoji": true,
   "ShowMultiUploadWarning": true,
@@ -1051,5 +966,5 @@
   "DropAlignment": "BottomRight",
   "DropOpacity": 100,
   "DropHoverOpacity": 255,
-  "ApplicationVersion": "21.0.0"
+  "ApplicationVersion": "22.4.0"
 }
