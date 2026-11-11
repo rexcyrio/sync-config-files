@@ -280,6 +280,10 @@ const homeConfig: Config[] = [
   },
   {
     type: Resource.file,
+    pathComponents: ["C:", "Users", "__USERNAME__", ".config", "ccstatusline","settings.json"],
+  },
+  {
+    type: Resource.file,
     pathComponents: [
       "C:",
       "Users",

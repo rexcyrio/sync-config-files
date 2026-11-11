@@ -4,11 +4,23 @@
 
 ```bash
 scoop install altsnap
-# scoop install pshazz
+# scoop install pshazz  ## replaced by starship
 scoop install starship
 scoop install scoop-completion
 scoop install scoop-search
 scoop install shutup10
+```
+
+## Install AI Tooling
+
+```bash
+winget install Anthropic.ClaudeCode
+
+scoop install nodejs-lts
+npx -y ccstatusline@latest
+
+# optional
+scoop install cc-switch
 ```
 
 ## Install software using `winget`
